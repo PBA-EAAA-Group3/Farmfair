@@ -1,2 +1,4 @@
 # Farmfair
-Master repository for the Farmfairproject
+Master repository for the Farmfair project
+
+By Jeanette, Ruth, Sebastian
