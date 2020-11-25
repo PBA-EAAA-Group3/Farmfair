@@ -10,13 +10,13 @@ namespace Interdisc.Farm.Models
         public decimal TotalPrice { get { return Quantity * ProductID.Price; } }
 
         public int InvoiceID { get; set; }
-        public int ProductID { get; set; }
+        public  int ProductID { get; set; }
         public int CategoryID { get; set; }
   
-        public string ProductName{ get; set; }
+        public ProductModel ProductName { get; set; }
        
 
-        public OrderItemsModels(int orderitemid, int quantity, decimal totalprice, int invoiceid, int productid, int categoryid, string productname)
+        public OrderItemsModels(int orderitemid, int quantity, decimal totalprice, int invoiceid, int productid, int categoryid, ProductModel productname)
         {
             OrderItemID = orderitemid;
             Quantity = quantity;
