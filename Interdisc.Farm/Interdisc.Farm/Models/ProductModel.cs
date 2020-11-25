@@ -10,14 +10,17 @@ namespace Interdisc.Farm.Models
         public string ProductName{ get; set; }
         public int FarmID { get; set; }
 
+        public decimal Price { get; set; }
 
-        public ProductModel(int productid, int categoryid, int batch, string productname, int farmid)
+
+        public ProductModel(int productid, int categoryid, int batch, string productname, int farmid, decimal price)
         {
             ProductID = productid;
             CategoryID = categoryid;
             Batch = batch;
             ProductName = productname;
             FarmID = farmid;
+            Price = price;
 
         }
 
