@@ -4,8 +4,22 @@ namespace Interdisc.Farm.Models
 {
     public class ProductModel
     {
-        public string RequestId { get; set; }
+        public int ProductID { get; set; }
+        public int CategoryID { get; set; }
+        public int Batch { get; set; }
+        public string ProductName{ get; set; }
+        public int FarmID { get; set; }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+        public ProductModel(int productid, int categoryid, int batch, string productname, int farmid)
+        {
+            ProductID = productid;
+            CategoryID = categoryid;
+            Batch = batch;
+            ProductName = productname;
+            FarmID = farmid;
+
+        }
+
     }
 }

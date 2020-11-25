@@ -4,8 +4,18 @@ namespace Interdisc.Farm.Models
 {
     public class InvoiceModel
     {
-        public string RequestId { get; set; }
+        public int InvoiceID{ get; set; }
+        public int CustomerID { get; set; }
+        public DateTime OrderDate { get; set; }
+        public decimal TotalPrice
+       
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+        public InvoiceModel (int invoiceid, int customerid, DateTime orderdate)
+        {
+            InvoiceID = invoiceid;
+            CustomerID = customerid;
+            OrderDate = orderdate;
+        }
     }
 }
