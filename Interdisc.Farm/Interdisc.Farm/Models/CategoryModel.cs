@@ -2,7 +2,7 @@ using System;
 
 namespace Interdisc.Farm.Models
 {
-    public class InvoiceModel
+    public class CategoryModel
     {
         public string RequestId { get; set; }
 

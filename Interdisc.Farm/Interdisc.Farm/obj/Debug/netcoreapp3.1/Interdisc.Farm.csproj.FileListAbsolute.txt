@@ -1,0 +1,7 @@
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.csprojAssemblyReference.cache
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.AssemblyInfoInputs.cache
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.AssemblyInfo.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.csproj.CoreCompileInputs.cache
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.RazorAssemblyInfo.cache
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.RazorAssemblyInfo.cs
