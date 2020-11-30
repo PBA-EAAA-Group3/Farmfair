@@ -2,9 +2,9 @@ using System;
 
 namespace Interdisc.Farm.Models
 {
-    public class CategoryModel
+    public class ProductGroupModel
     {
-        public int CategoryID { get; set; }
+        public int ProductGroupID { get; set; }
         public int ProductID { get; set; }
         public string Fruit { get; set; }
         public string Vegetable { get; set; }
@@ -17,9 +17,9 @@ namespace Interdisc.Farm.Models
 
 
 
-        public CategoryModel (int categoryid, int productid, string fruit, string vegetable, string meat, string dairy, string eggs, string honey)
+        public ProductGroupModel (int productgroupid, int productid, string fruit, string vegetable, string meat, string dairy, string eggs, string honey)
         {
-            CategoryID = categoryid;
+            ProductGroupID = productgroupid;
             ProductID = productid;
             Fruit = fruit;
             Vegetable = vegetable;
