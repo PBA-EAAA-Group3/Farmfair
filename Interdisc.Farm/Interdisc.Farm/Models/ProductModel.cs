@@ -16,6 +16,7 @@ namespace Interdisc.Farm.Models
         public decimal Price { get; set; }
 
 
+        public ProductModel () { }
         public ProductModel(int productid, int categoryid, int batch, string productname, int farmid, decimal price)
         {
             ProductID = productid;
