@@ -4,7 +4,7 @@ namespace Interdisc.Farm.Models
 {
     public class CustomerModel
     {
-        public int CustomerID { get; set; }
+        public int CustomerModelId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
@@ -12,10 +12,10 @@ namespace Interdisc.Farm.Models
        
 
 
-
+        public CustomerModel() { }
         public CustomerModel (int customerid, string firstname, string lastname, string phone, string email)
         {
-            CustomerID = customerid;
+            CustomerModelId = customerid;
             FirstName = firstname;
             LastName = lastname;
             Phone = phone;

@@ -1,28 +1,35 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Interdisc.Farm.Models
 {
-    public class OrderItemsModels
+    public class OrderItemsModel
     {
-        public int OrderItemID { get; set; }
+        public int OrderItemsModelId { get; set; }
 
         public int Quantity { get; set; }
+        
+        [Column(TypeName = "decimal(18,2)")]
         public decimal TotalPrice { get { return Quantity * ProductModel.Price; } }
+          
 
-        public int InvoiceID { get; set; }
-        public  int ProductID { get; set; }
-        public int CategoryID { get; set; }
+        public int InvoiceModelId { get; set; }
+        public virtual InvoiceModel InvoiceModel { get; set; }
+        public  int ProductModelId { get; set; }
+        public virtual ProductModel ProductModel { get; set; }
+        //public int ProductGroupModelId { get; set; }
+        //public virtual ProductGroupModel ProductGroupModel { get; set; }
   
-        public ProductModel ProductModel { get; set; }
+      
 
-
-        public OrderItemsModels(int orderitemid, int quantity, decimal totalprice, int invoiceid, int productid, int categoryid, ProductModel productname)
+        public OrderItemsModel() { }
+        public OrderItemsModel(int orderitemid, int quantity, decimal totalprice, int invoiceid, int productid, int productgroupid, ProductModel productname)
         {
-            OrderItemID = orderitemid;
+            OrderItemsModelId = orderitemid;
             Quantity = quantity;
-            InvoiceID = invoiceid;
-            ProductID = productid;
-            CategoryID = categoryid;
+            InvoiceModelId = invoiceid;
+            ProductModelId = productid;
+        
           
 
         }

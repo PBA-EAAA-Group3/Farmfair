@@ -6,29 +6,35 @@ namespace Interdisc.Farm.Models
 {
     public class InvoiceModel
     {
-        private decimal totalPrice;
-        public int InvoiceID{ get; set; }
-        public int CustomerID { get; set; }
+       
+        public int InvoiceModelId{ get; set; }
+        public int CustomerModelId { get; set; }
+
+        public virtual  CustomerModel CustomerModel { get; set; }
         public DateTime OrderDate { get; set; }
 
+        private decimal totalPrice;
         public decimal TotalPrice
         {
             get
             {
                 totalPrice = 0;
-                foreach (OrderItemsModels orderItem in OrderItems)
+                foreach (OrderItemsModel orderItem in OrderItems)
                 {
                     totalPrice += orderItem.TotalPrice;
                 }
                 return TotalPrice;
             }
+           
         }
-        public List<OrderItemsModels> OrderItems { get; } = new List<OrderItemsModels>();
+        [Column(TypeName = "decimal(18,2)")]
+    public List<OrderItemsModel> OrderItems { get; } = new List<OrderItemsModel>();
 
+        public InvoiceModel() { }
         public InvoiceModel (int invoiceid, int customerid, DateTime orderdate)
         {
-            InvoiceID = invoiceid;
-            CustomerID = customerid;
+            InvoiceModelId = invoiceid;
+            CustomerModelId = customerid;
             OrderDate = orderdate;        }
     }
 }

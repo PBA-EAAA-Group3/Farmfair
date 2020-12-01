@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sebastian\\Desktop\\Farmfaiir\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj": {}
+    "C:\\Users\\ruthm\\Desktop\\Interdisc.Proj\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sebastian\\Desktop\\Farmfaiir\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj": {
+    "C:\\Users\\ruthm\\Desktop\\Interdisc.Proj\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sebastian\\Desktop\\Farmfaiir\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj",
+        "projectUniqueName": "C:\\Users\\ruthm\\Desktop\\Interdisc.Proj\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj",
         "projectName": "Interdisc.Farm",
-        "projectPath": "C:\\Users\\Sebastian\\Desktop\\Farmfaiir\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj",
-        "packagesPath": "C:\\Users\\Sebastian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sebastian\\Desktop\\Farmfaiir\\Interdisc.Farm\\Interdisc.Farm\\obj\\",
+        "projectPath": "C:\\Users\\ruthm\\Desktop\\Interdisc.Proj\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj",
+        "packagesPath": "C:\\Users\\ruthm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ruthm\\Desktop\\Interdisc.Proj\\Interdisc.Farm\\Interdisc.Farm\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Sebastian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ruthm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,27 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

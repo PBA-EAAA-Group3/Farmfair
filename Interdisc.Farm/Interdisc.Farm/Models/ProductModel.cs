@@ -2,28 +2,40 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Interdisc.Farm.Models
 {
     public class ProductModel
     {
-        public int ProductID { get; set; }
-        public int ProductGroupID { get; set; }
+       
+        public int ProductModelId { get; set; }
+        public int ProductGroupModelId { get; set; }
+
+        public  virtual ProductGroupModel ProductGroupModel{ get; set; }
+       //public virtual ICollection<ProductGroupModel> ProductGroupModel { get; set; }
         public int Batch { get; set; }
         public string ProductName{ get; set; }
-        public int FarmID { get; set; }
+        public int FarmModelId { get; set; }
+        public virtual FarmModel FarmModel { get; set; }
+      
+
+
 
         public decimal Price { get; set; }
+   
+
+
 
 
         public ProductModel () { }
         public ProductModel(int productid, int productgroupid, int batch, string productname, int farmid, decimal price)
         {
-            ProductID = productid;
-            ProductGroupID = productgroupid;
+            ProductModelId = productid;
+            ProductGroupModelId = productgroupid;
             Batch = batch;
             ProductName = productname;
-            FarmID = farmid;
+            FarmModelId = farmid;
             Price = price;
 
         }
