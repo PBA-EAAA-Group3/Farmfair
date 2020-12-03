@@ -28,17 +28,17 @@ namespace Interdisc.Farm.Models
 
 
 
-        public ProductModel () { }
-        public ProductModel(int productid, int productgroupid, int batch, string productname, int farmid, decimal price)
-        {
-            ProductModelId = productid;
-            ProductGroupModelId = productgroupid;
-            Batch = batch;
-            ProductName = productname;
-            FarmModelId = farmid;
-            Price = price;
+        //public ProductModel () { }
+        //public ProductModel(int productid, int productgroupid, int batch, string productname, int farmid, decimal price)
+        //{
+        //    ProductModelId = productid;
+        //    ProductGroupModelId = productgroupid;
+        //    Batch = batch;
+        //    ProductName = productname;
+        //    FarmModelId = farmid;
+        //    Price = price;
 
-        }
+        //}
 
     }
 }

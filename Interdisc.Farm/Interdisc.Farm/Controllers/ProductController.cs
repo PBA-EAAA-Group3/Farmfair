@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Interdisc.Farm.Data;
 using Interdisc.Farm.Models;
+using Newtonsoft.Json;
 
 namespace Interdisc.Farm.Controllers
 {
@@ -19,68 +21,93 @@ namespace Interdisc.Farm.Controllers
             _context = context;
         }
 
-        // GET: Product
-        public async Task<IActionResult> IndexView()
-        {
-            // var interdiscFarmContext = _context.ProductModel.Include(p => p.FarmModel).Include(p => p.ProductGroupModel);
-            // return View(await interdiscFarmContext.ToListAsync());
-
-            var groups = new List<ProductGroupModel>
-            {
-                new ProductGroupModel
-                {
-                    ProductGroupName = "Fruit"
-                },
-
-                new ProductGroupModel
-                {
-                    ProductGroupName = "Vegetable"
-                },
-                  new ProductGroupModel
-                {
-                    ProductGroupName = "Meat"
-                }
-            };
-
-            var products = new List<ProductModel>
-            {
-                new ProductModel
-                {
-                    ProductModelId = 3,
-                    ProductName = "Apple",
-                    ProductGroup = groups[0]
-                },
-                  new ProductModel
-                {
-                    ProductModelId = 4,
-                      ProductName = "Cauliflower",
-                    ProductGroup = groups[1]
-                },
-                     new ProductModel
-                {
-                    ProductModelId = 5,
-                         ProductName = "Bacon",
-                    ProductGroup = groups[2]
-                },
-            };
-
-            var model = new Tuple<List<ProductGroupModel>, List<ProductModel>>(
-                groups, 
-                products
-                );
-            return View(model);
-        }
 
         // GET: Product/Index/5
-        public async Task<IActionResult> Index(int? id)
+        public async Task<IActionResult> Index()
         {
-            if (id != null)
-            {
-                // TODO Add to basket
-            }
+            var basket = GetBasket();
+            var groups = _context.ProductGroupModel.ToList();
+            var products = _context.ProductModel.ToList();
 
-            return await IndexView();
+            var model = new Tuple<List<ProductGroupModel>, List<ProductModel>, BasketModel>(
+                groups,
+                products,
+                basket
+                );
+            return View(model);
+
         }
 
+        public async Task<IActionResult> Add(int? id)
+        {
+            var basket = GetBasket();
+            var items = basket.Items.Where(item => item.ProductId == id).ToList();
+            if (items.Count() > 0)
+                items[0].Quantity++;
+            else
+            {
+                basket.Items.Add(new BasketItem
+                {
+                    ProductId = (int)id,
+                    Quantity = 1,
+                });
+            }
+
+
+            SaveBasket(basket);
+            var groups = _context.ProductGroupModel.ToList();
+            var products = _context.ProductModel.ToList();
+
+            var model = new Tuple<List<ProductGroupModel>, List<ProductModel>, BasketModel>(
+                groups,
+                products,
+                basket
+                );
+            return View("Index", model);
+        }
+
+        public async Task<IActionResult> Category(int? id)
+        {
+            var basket = GetBasket();
+            var groups = _context.ProductGroupModel.ToList();
+            List<ProductModel> products;
+            if (id != null)
+                products = _context.ProductModel.ToList().Where(p => p.ProductGroupModelId == id).ToList();
+            else
+                products = _context.ProductModel.ToList();
+
+            var model = new Tuple<List<ProductGroupModel>, List<ProductModel>, BasketModel>(
+                groups,
+                products,
+                basket
+                );
+            return View("Index", model);
+        }
+
+        public BasketModel GetBasket()
+        {
+            BasketModel basket;
+
+
+            if (!HttpContext.Session.Keys.Contains("basket"))
+            {
+
+                basket = new BasketModel();
+
+            }
+            else
+            {
+                var str = HttpContext.Session.GetString("basket");
+                var obj = JsonConvert.DeserializeObject<BasketModel>(str);
+                basket = (BasketModel)obj;
+            }
+            return basket;
+
+
+        }
+        public void SaveBasket(BasketModel basket)
+        {
+            HttpContext.Session.SetString("basket", JsonConvert.SerializeObject(basket));
+        }
     }
 }

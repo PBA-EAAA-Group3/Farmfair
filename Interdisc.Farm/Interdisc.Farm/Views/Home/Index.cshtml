@@ -1,13 +1,18 @@
 ﻿@model List<ProductGroupModel>
 @{
     ViewData["Title"] = "Home Page";
+    
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<p> <a asp-action="Index" asp-controller="Product">All Products</a></p>
 @foreach (var group in Model)
 {
-    <p> @group.ProductGroupName</p>
+<p> <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
 }
+
+   
+

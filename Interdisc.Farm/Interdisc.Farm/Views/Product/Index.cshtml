@@ -1,4 +1,4 @@
-﻿@model Tuple<List<ProductGroupModel>, List<ProductModel>>
+﻿@model Tuple<List<ProductGroupModel>, List<ProductModel>, BasketModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -6,38 +6,52 @@
 
 <h1>Index</h1>
 
+
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Index" asp-controller="Invoice">Basket</a><br />
+    @Model.Item3.ItemCount
+
+</p>
+
+<p>
+    <a asp-action="Index">All Products</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-             Product Group
+                Product Group
             </th>
             <th>
-              Product Name
+                Product Name
             </th>
-            
-            <th></th>
+
+            <th>
+                Price
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Item2) {
+        @foreach (var item in Model.Item2)
+        {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ProductGroup.ProductGroupName)
+                <a asp-action="Category" asp-route-id="@item.ProductGroup.ProductGroupModelId">@item.ProductGroup.ProductGroupName</a>
+              
             </td>
-       
+
+
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
-                <img src="~/images/@item.ProductName+".jpg" />
+                <img src="~/images/@item.ProductName.ToLower().Replace(' ', '-' )+" .jpg" />
             </td>
-         
             <td>
-                <a asp-action="Index" asp-route-id="@item.ProductModelId">Add to basket</a> 
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-action="Add" asp-route-id="@item.ProductModelId">Add to basket</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

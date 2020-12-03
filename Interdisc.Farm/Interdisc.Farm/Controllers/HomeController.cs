@@ -21,33 +21,8 @@ namespace Interdisc.Farm.Controllers
 
         public IActionResult Index()
         {
-            var useDatabase = false;
-            if (useDatabase)
-                return View(_context.ProductGroupModel.ToList());
 
-            else
-            {
-                var groups = new List<ProductGroupModel>
-            {
-                new ProductGroupModel
-                {
-                    ProductGroupName = "Fruit"
-                },
-
-                new ProductGroupModel
-                {
-                    ProductGroupName = "Vegetable"
-                },
-                  new ProductGroupModel
-                {
-                    ProductGroupName = "Meat"
-                }
-            };
-
-                return View(groups);
-            }
-
-
+            return View(_context.ProductGroupModel.ToList());
         }
     }
 }
