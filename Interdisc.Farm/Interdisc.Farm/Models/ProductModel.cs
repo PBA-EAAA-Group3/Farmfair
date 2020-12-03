@@ -12,7 +12,7 @@ namespace Interdisc.Farm.Models
         public int ProductModelId { get; set; }
         public int ProductGroupModelId { get; set; }
 
-        public  virtual ProductGroupModel ProductGroupModel{ get; set; }
+        public  virtual ProductGroupModel ProductGroup{ get; set; }
        //public virtual ICollection<ProductGroupModel> ProductGroupModel { get; set; }
         public int Batch { get; set; }
         public string ProductName{ get; set; }

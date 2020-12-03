@@ -20,147 +20,67 @@ namespace Interdisc.Farm.Controllers
         }
 
         // GET: Product
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> IndexView()
         {
-            var interdiscFarmContext = _context.ProductModel.Include(p => p.FarmModel).Include(p => p.ProductGroupModel);
-            return View(await interdiscFarmContext.ToListAsync());
-        }
+            // var interdiscFarmContext = _context.ProductModel.Include(p => p.FarmModel).Include(p => p.ProductGroupModel);
+            // return View(await interdiscFarmContext.ToListAsync());
 
-        // GET: Product/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
+            var groups = new List<ProductGroupModel>
             {
-                return NotFound();
-            }
-
-            var productModel = await _context.ProductModel
-                .Include(p => p.FarmModel)
-                .Include(p => p.ProductGroupModel)
-                .FirstOrDefaultAsync(m => m.ProductModelId == id);
-            if (productModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(productModel);
-        }
-
-        // GET: Product/Create
-        public IActionResult Create()
-        {
-            ViewData["FarmModelId"] = new SelectList(_context.Set<FarmModel>(), "FarmModelId", "FarmModelId");
-            ViewData["ProductGroupModelId"] = new SelectList(_context.ProductGroupModel, "ProductGroupModelId", "ProductGroupModelId");
-            return View();
-        }
-
-        // POST: Product/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductModelId,ProductGroupModelId,Batch,ProductName,FarmModelId,Price")] ProductModel productModel)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(productModel);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["FarmModelId"] = new SelectList(_context.Set<FarmModel>(), "FarmModelId", "FarmModelId", productModel.FarmModelId);
-            ViewData["ProductGroupModelId"] = new SelectList(_context.ProductGroupModel, "ProductGroupModelId", "ProductGroupModelId", productModel.ProductGroupModelId);
-            return View(productModel);
-        }
-
-        // GET: Product/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var productModel = await _context.ProductModel.FindAsync(id);
-            if (productModel == null)
-            {
-                return NotFound();
-            }
-            ViewData["FarmModelId"] = new SelectList(_context.Set<FarmModel>(), "FarmModelId", "FarmModelId", productModel.FarmModelId);
-            ViewData["ProductGroupModelId"] = new SelectList(_context.ProductGroupModel, "ProductGroupModelId", "ProductGroupModelId", productModel.ProductGroupModelId);
-            return View(productModel);
-        }
-
-        // POST: Product/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductModelId,ProductGroupModelId,Batch,ProductName,FarmModelId,Price")] ProductModel productModel)
-        {
-            if (id != productModel.ProductModelId)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                new ProductGroupModel
                 {
-                    _context.Update(productModel);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
+                    ProductGroupName = "Fruit"
+                },
+
+                new ProductGroupModel
                 {
-                    if (!ProductModelExists(productModel.ProductModelId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    ProductGroupName = "Vegetable"
+                },
+                  new ProductGroupModel
+                {
+                    ProductGroupName = "Meat"
                 }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["FarmModelId"] = new SelectList(_context.Set<FarmModel>(), "FarmModelId", "FarmModelId", productModel.FarmModelId);
-            ViewData["ProductGroupModelId"] = new SelectList(_context.ProductGroupModel, "ProductGroupModelId", "ProductGroupModelId", productModel.ProductGroupModelId);
-            return View(productModel);
-        }
+            };
 
-        // GET: Product/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
+            var products = new List<ProductModel>
             {
-                return NotFound();
-            }
+                new ProductModel
+                {
+                    ProductModelId = 3,
+                    ProductName = "Apple",
+                    ProductGroup = groups[0]
+                },
+                  new ProductModel
+                {
+                    ProductModelId = 4,
+                      ProductName = "Cauliflower",
+                    ProductGroup = groups[1]
+                },
+                     new ProductModel
+                {
+                    ProductModelId = 5,
+                         ProductName = "Bacon",
+                    ProductGroup = groups[2]
+                },
+            };
 
-            var productModel = await _context.ProductModel
-                .Include(p => p.FarmModel)
-                .Include(p => p.ProductGroupModel)
-                .FirstOrDefaultAsync(m => m.ProductModelId == id);
-            if (productModel == null)
+            var model = new Tuple<List<ProductGroupModel>, List<ProductModel>>(
+                groups, 
+                products
+                );
+            return View(model);
+        }
+
+        // GET: Product/Index/5
+        public async Task<IActionResult> Index(int? id)
+        {
+            if (id != null)
             {
-                return NotFound();
+                // TODO Add to basket
             }
 
-            return View(productModel);
+            return await IndexView();
         }
 
-        // POST: Product/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var productModel = await _context.ProductModel.FindAsync(id);
-            _context.ProductModel.Remove(productModel);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool ProductModelExists(int id)
-        {
-            return _context.ProductModel.Any(e => e.ProductModelId == id);
-        }
     }
 }

@@ -1,4 +1,3 @@
-C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.csprojAssemblyReference.cache
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.AssemblyInfoInputs.cache
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.AssemblyInfo.cs
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.csproj.CoreCompileInputs.cache
@@ -173,8 +172,6 @@ C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\ne
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Edit.cshtml.g.cs
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Index.cshtml.g.cs
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Product\Create.cshtml.g.cs
-C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Product\Delete.cshtml.g.cs
-C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Product\Details.cshtml.g.cs
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Product\Edit.cshtml.g.cs
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Invoice\Create.cshtml.g.cs
@@ -182,3 +179,14 @@ C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\ne
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Invoice\Details.cshtml.g.cs
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Invoice\Edit.cshtml.g.cs
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Invoice\Index.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\ProductGroup\Create.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\ProductGroup\Delete.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\ProductGroup\Details.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\ProductGroup\Edit.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\ProductGroup\Index.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\OrderItems\Create.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\OrderItems\Delete.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\OrderItems\Details.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\OrderItems\Edit.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\OrderItems\Index.cshtml.g.cs
+C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.csprojAssemblyReference.cache

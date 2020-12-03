@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Interdisc.Farm.Models.OrderItemsModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductModel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceModel.InvoiceModelId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductModel.ProductModelId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrderItemsModelId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderItemsModelId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderItemsModelId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
