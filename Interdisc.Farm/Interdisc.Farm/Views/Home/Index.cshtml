@@ -4,11 +4,12 @@
 
 }
 
-
-<p> <a asp-action="Index" asp-controller="Product">All Products</a></p>
+@*this was moved to the 'shop'button*@
+@*<p> <a asp-action="Index" asp-controller="Product">All Products</a></p>*@
 @foreach (var group in Model)
 {
     <p> <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
+    
 }
 
 
@@ -42,7 +43,7 @@
 <body>
     <header>
         <nav class="container">
-            <h4 class="home"><a href="#">Store</a></h4>
+            <h4 class="home"><a asp-action="Index" asp-controller="Product">Shop</a></h4>
             <a class="basket">
                 <div class="basket-count">2</div>
                 <img src="img/basket-light.svg" alt="">
@@ -65,7 +66,6 @@
 
 
         <div class="grid-category">
-
             <a href="#" class="card fruit">
                 <div class="cat-overlay">
                     <h3>Fruit</h3>
@@ -219,15 +219,12 @@
     </footer>
 
 
-    <!-- Add your site or application content here -->
-    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
