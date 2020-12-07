@@ -1,18 +1,235 @@
 ﻿@model List<ProductGroupModel>
 @{
     ViewData["Title"] = "Home Page";
-    
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
 <p> <a asp-action="Index" asp-controller="Product">All Products</a></p>
 @foreach (var group in Model)
 {
-<p> <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
+    <p> <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
 }
 
-   
 
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/checkout.css">
+
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <h4 class="home"><a href="#">Store</a></h4>
+            <a class="basket">
+                <div class="basket-count">2</div>
+                <img src="img/basket-light.svg" alt="">
+            </a>
+        </nav>
+
+    </header>
+    <div id="hero">
+        <div class="video-container">
+            <video loop src="~/images/cottonbro.mp4" autoplay poster="img/cottenbro.jpg"></video>
+        </div>
+        <div class="pageHeading">
+            <h1><img class="logo" src="img/farmfair-logo1.svg" alt="farmfair"></h1>
+            <h3 class="description">Get fresh excess produce and meats directly from the farm</h3>
+        </div>
+
+    </div>
+    <div class="gradSectionSolid"></div>
+    <section id="categories">
+
+
+        <div class="grid-category">
+
+            <a href="#" class="card fruit">
+                <div class="cat-overlay">
+                    <h3>Fruit</h3>
+                </div>
+            </a>
+
+            <a href="#" class="card veggies">
+                <div class="cat-overlay">
+                    <h3>Veggies</h3>
+
+                </div>
+            </a>
+
+            <a href="#" class="card dairy">
+                <div class="cat-overlay">
+                    <h3>Dairy</h3>
+                </div>
+            </a>
+
+            <a href="#" class="card meat">
+                <div class="cat-overlay">
+                    <h3>Meats</h3>
+
+                </div>
+            </a>
+
+            <a href="#" class="card honey">
+                <div class="cat-overlay">
+                    <h3>Honey</h3>
+
+                </div>
+            </a>
+
+            <a href="#" class="card eggs">
+                <div class="cat-overlay">
+                    <h3>Eggs</h3>
+
+                </div>
+            </a>
+
+        </div>
+    </section>
+    <section id="story" class="container">
+        <h2>Our Story</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae itaque amet nesciunt, rem cumque sit officia blanditiis, pariatur ipsa doloremque sequi quo esse iste repudiandae!</p>
+        <a href="#" class="downArrow">&#709;</a>
+    </section>
+    <section id="recipes">
+        <h2>Inspiration</h2>
+        <div class="recipe-filter container">
+            <a href="#" class="btn btn_primary">Breakfast</a>
+            <a href="#" class="btn btn_primary">Beverages</a>
+            <a href="#" class="btn btn_primary">Main</a>
+            <a href="#" class="btn btn_primary">Dessert</a>
+            <a href="#" class="btn btn_primary">Appetizers</a>
+        </div>
+        <div class="recipe-grid container-small">
+
+            <div class="recipe-card">
+                <a href="#" class="">
+                    <img src="https://picsum.photos/300/200" alt="">
+                    <div class="recipe-card-info">
+                        <h3 class="small">Spaghetti bolognese</h3>
+                        <div class="recipe-card-info-facts">
+                            <div class="level">easy</div>
+                            <div class="recipe-time">30 min</div>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+            <div class="recipe-card">
+                <a href="#" class="">
+                    <img src="https://picsum.photos/300/200" alt="">
+                    <div class="recipe-card-info">
+                        <h3 class="small">Spaghetti bolognese</h3>
+                        <div class="recipe-card-info-facts">
+                            <div class="level">easy</div>
+                            <div class="recipe-time">30 min</div>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+            <div class="recipe-card">
+                <a href="#" class="">
+                    <img src="https://picsum.photos/300/200" alt="">
+                    <div class="recipe-card-info">
+                        <h3 class="small">Spaghetti bolognese</h3>
+                        <div class="recipe-card-info-facts">
+                            <div class="level">easy</div>
+                            <div class="recipe-time">30 min</div>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+            <div class="recipe-card">
+                <a href="#" class="">
+                    <img src="https://picsum.photos/300/200" alt="">
+                    <div class="recipe-card-info">
+                        <h3 class="small">Spaghetti bolognese</h3>
+                        <div class="recipe-card-info-facts">
+                            <div class="level">easy</div>
+                            <div class="recipe-time">30 min</div>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+            <div class="recipe-card">
+                <a href="#" class="">
+                    <img src="https://picsum.photos/300/200" alt="">
+                    <div class="recipe-card-info">
+                        <h3 class="small">Spaghetti bolognese</h3>
+                        <div class="recipe-card-info-facts">
+                            <div class="level">easy</div>
+                            <div class="recipe-time">30 min</div>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+            <div class="recipe-card">
+                <a href="#" class="">
+                    <img src="https://picsum.photos/300/200" alt="">
+                    <div class="recipe-card-info">
+                        <h3 class="small">Spaghetti bolognese</h3>
+                        <div class="recipe-card-info-facts">
+                            <div class="level">easy</div>
+                            <div class="recipe-time">30 min</div>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+    <section id="map"></section>
+    <footer>
+        <div class="contact">
+            <a href="mailto:zerowaist@farmfair.com">zerowaste@farmfair.com</a>
+        </div>
+        <div class="links">
+            <a href="#">Terms of Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+        </div>
+    </footer>
+
+
+    <!-- Add your site or application content here -->
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
