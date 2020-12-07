@@ -4,13 +4,12 @@
 
 }
 
-@*this was moved to the 'shop'button*@
-@*<p> <a asp-action="Index" asp-controller="Product">All Products</a></p>*@
-@foreach (var group in Model)
-{
-    <p> <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
-    
-}
+
+@*@foreach (var group in Model)
+    {
+        <p> <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
+
+    }*@
 
 
 
@@ -46,14 +45,14 @@
             <h4 class="home"><a asp-action="Index" asp-controller="Product">Shop</a></h4>
             <a class="basket">
                 <div class="basket-count">2</div>
-                <img src="img/basket-light.svg" alt="">
+                <img src="imgages/basket-light.svg" alt="">
             </a>
         </nav>
 
     </header>
     <div id="hero">
         <div class="video-container">
-            <video loop src="~/images/cottonbro.mp4" autoplay poster="img/cottenbro.jpg"></video>
+            <video loop src="~/images/cottonbro.mp4" autoplay poster="~images/cottonbro.jpg"></video>
         </div>
         <div class="pageHeading">
             <h1><img class="logo" src="img/farmfair-logo1.svg" alt="farmfair"></h1>
@@ -61,52 +60,66 @@
         </div>
 
     </div>
+
+
+
+
+
     <div class="gradSectionSolid"></div>
     <section id="categories">
 
-
         <div class="grid-category">
-            <a href="#" class="card fruit">
-                <div class="cat-overlay">
-                    <h3>Fruit</h3>
+            @foreach (var group in Model)
+            {
+
+                <div class="card">
+                    <p> <a class="cat-overlay" asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
                 </div>
-            </a>
 
-            <a href="#" class="card veggies">
-                <div class="cat-overlay">
-                    <h3>Veggies</h3>
 
-                </div>
-            </a>
+                @*<a href="#" class="card fruit">
+                        <div class="cat-overlay">
+                            <h3>Fruit</h3>
+                        </div>
+                    </a>
 
-            <a href="#" class="card dairy">
-                <div class="cat-overlay">
-                    <h3>Dairy</h3>
-                </div>
-            </a>
+                    <a href="#" class="card veggies">
+                        <div class="cat-overlay">
+                            <h3>Veggies</h3>
 
-            <a href="#" class="card meat">
-                <div class="cat-overlay">
-                    <h3>Meats</h3>
+                        </div>
+                    </a>
 
-                </div>
-            </a>
+                    <a href="#" class="card dairy">
+                        <div class="cat-overlay">
+                            <h3>Dairy</h3>
+                        </div>
+                    </a>
 
-            <a href="#" class="card honey">
-                <div class="cat-overlay">
-                    <h3>Honey</h3>
+                    <a href="#" class="card meat">
+                        <div class="cat-overlay">
+                            <h3>Meats</h3>
 
-                </div>
-            </a>
+                        </div>
+                    </a>
 
-            <a href="#" class="card eggs">
-                <div class="cat-overlay">
-                    <h3>Eggs</h3>
+                    <a href="#" class="card honey">
+                        <div class="cat-overlay">
+                            <h3>Honey</h3>
 
-                </div>
-            </a>
+                        </div>
+                    </a>
 
-        </div>
+                    <a href="#" class="card eggs">
+                        <div class="cat-overlay">
+                            <h3>Eggs</h3>
+
+                        </div>
+                    </a>*@
+
+
+
+            }
     </section>
     <section id="story" class="container">
         <h2>Our Story</h2>
