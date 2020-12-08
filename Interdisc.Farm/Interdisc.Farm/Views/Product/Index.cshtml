@@ -1,0 +1,224 @@
+﻿@model Tuple<List<ProductGroupModel>, List<ProductModel>, BasketModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    string GetProductImageUrl(ProductModel product) => $"~/images/" + $"{product.ProductName.ToLower().Replace(' ', '-')}.jpg";
+}
+
+<link rel="stylesheet" href="~/css/custom.css" type="text/css" />
+
+<link rel="stylesheet" href="~/css/main.css" type="text/css" />
+
+<link rel="stylesheet" href="~/css/normalize.css" type="text/css" />
+
+
+
+
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <h4 class="home"><a asp-action="Index" asp-controller="Home">Home</a></h4>
+            <a class="basket" asp-action="Index" asp-controller="Invoice">
+                @Model.Item3.ItemCount
+                @*<div class="basket-count">2</div>*@
+               
+                   
+
+
+                <img src="~/images/basket-light.svg" alt="basket">
+            </a>
+        </nav>
+
+    </header>
+    <h2>Products</h2>
+    <section id="store">
+        <aside>
+            <ul>
+                <li> <a class="btn btn_primary" asp-action="Index">All Products</a></li>
+                @foreach (var item in Model.Item2)
+                {
+                    @*@Html.DisplayFor(modelItem => item.ProductName)*@
+                    @Html.DisplayFor(modelItem => item.ProductGroupModelId)
+                    <li>    <a class="btn btn_primary" asp-action="Category" asp-route-id="@item.ProductGroup.ProductGroupModelId">@item.ProductGroup.ProductGroupName</a> </li>
+                }
+
+                @*<li><a href="#" class="btn btn_primary">Fruit</a></li>
+        <li><a href="#" class="btn btn_primary">Veggies</a></li>
+        <li><a href="#" class="btn btn_primary">Meat</a></li>
+        <li><a href="#" class="btn btn_primary">Dairy</a></li>
+        <li><a href="#" class="btn btn_primary">Eggs</a></li>
+        <li><a href="#" class="btn btn_primary">Honey</a></li>*@
+            </ul>
+        </aside>
+        <div id="store-grid">
+            @foreach (var item in Model.Item2)
+            {
+
+                <div class="storeCard">
+                    <div class="storeCat">
+                        <p class="label">Category</p>
+                    </div>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                    <img src="~/images/red-cabbage.jpg" />
+                    <form class="addToBasket">
+                        @*<h3 class="small">Apples</h3>*@
+                        <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0" asp-action="Quantity" asp-route-id="@item.ProductModelId">
+                        <button class="addButton label" type="submit" asp-action="Add" asp-route-id="@item.ProductModelId">Add</button>
+                        <span class="label stk">5 stk</span>
+                        <span class="label kr">10 kr</span>
+                    </form>
+                </div>
+                @*<div class="storeCard">
+                        <div class="storeCat">
+                            <p class="label">Category</p>
+                        </div>
+                        <img src="img/strawberries.jpg" alt="strawberries">
+                        <form class="addToBasket">
+                            <h3 class="small">Strawberries (Box)</h3>
+                            <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0">
+                            <button class="addButton label" type="submit">Add</button>
+                            <span class="label stk">1 bk</span>
+                            <span class="label kr">20 kr</span>
+                        </form>
+                    </div>
+                    <div class="storeCard">
+                        <div class="storeCat">
+                            <p class="label">Category</p>
+                        </div>
+                        <img src="img/pears.jpg" alt="pears">
+                        <form class="addToBasket">
+                            <h3 class="small">Pears</h3>
+                            <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0">
+                            <button class="addButton label" type="submit">Add</button>
+                            <span class="label stk">4 stk</span>
+                            <span class="label kr">8 kr</span>
+                        </form>
+                    </div>
+                    <div class="storeCard">
+                        <div class="storeCat">
+                            <p class="label">Category</p>
+                        </div>
+                        <img src="img/apples.jpg" alt="apples">
+                        <form class="addToBasket">
+                            <h3 class="small">Apples</h3>
+                            <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0">
+                            <button class="addButton label" type="submit">Add</button>
+                            <span class="label stk">5 stk</span>
+                            <span class="label kr">10 kr</span>
+                        </form>
+                    </div>
+                    <div class="storeCard">
+                        <div class="storeCat">
+                            <p class="label">Category</p>
+                        </div>
+                        <img src="img/strawberries.jpg" alt="strawberries">
+                        <form class="addToBasket">
+                            <h3 class="small">Strawberries (Box)</h3>
+                            <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0">
+                            <button class="addButton label" type="submit">Add</button>
+                            <span class="label stk">1 bk</span>
+                            <span class="label kr">20 kr</span>
+                        </form>
+                    </div>
+                    <div class="storeCard">
+                        <div class="storeCat">
+                            <p class="label">Category</p>
+                        </div>
+                        <img src="img/pears.jpg" alt="pears">
+                        <form class="addToBasket">
+                            <h3 class="small">Pears</h3>
+                            <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0">
+                            <button class="addButton label" type="submit">Add</button>
+                            <span class="label stk">4 stk</span>
+                            <span class="label kr">8 kr</span>
+                        </form>
+                    </div>
+                    <div class="storeCard">
+                        <div class="storeCat">
+                            <p class="label">Category</p>
+                        </div>
+                        <img src="img/apples.jpg" alt="apples">
+                        <form class="addToBasket">
+                            <h3 class="small">Apples</h3>
+                            <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0">
+                            <button class="addButton label" type="submit">Add</button>
+                            <span class="label stk">5 stk</span>
+                            <span class="label kr">10 kr</span>
+                        </form>
+                    </div>
+                    <div class="storeCard">
+                        <div class="storeCat">
+                            <p class="label">Category</p>
+                        </div>
+                        <img src="img/strawberries.jpg" alt="strawberries">
+                        <form class="addToBasket">
+                            <h3 class="small">Strawberries (Box)</h3>
+                            <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0">
+                            <button class="addButton label" type="submit">Add</button>
+                            <span class="label stk">1 bk</span>
+                            <span class="label kr">20 kr</span>
+                        </form>
+                    </div>
+                    <div class="storeCard">
+                        <div class="storeCat">
+                            <p class="label">Category</p>
+                        </div>
+                        <img src="img/pears.jpg" alt="pears">
+                        <form class="addToBasket">
+                            <h3 class="small">Pears</h3>
+                            <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0">
+                            <button class="addButton label" type="submit">Add</button>
+                            <span class="label stk">4 stk</span>
+                            <span class="label kr">8 kr</span>
+                        </form>
+                    </div>*@
+            }
+
+
+        </div>
+    </section>
+    <footer>
+        <div class="contact">
+            <a href="mailto:zerowaist@farmfair.com">zerowaste@farmfair.com</a>
+        </div>
+        <div class="links">
+            <a href="#">Terms of Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
