@@ -1,6 +1,7 @@
 ﻿@model List<ProductGroupModel>
 @{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 
@@ -10,7 +11,11 @@
         <p> <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
 
     }*@
+<link rel="stylesheet" href="~/css/custom.css" type="text/css" />
 
+<link rel="stylesheet" href="~/css/main.css" type="text/css" />
+
+<link rel="stylesheet" href="~/css/normalize.css" type="text/css" />
 
 
 <!doctype html>
@@ -44,18 +49,19 @@
         <nav class="container">
             <h4 class="home"><a asp-action="Index" asp-controller="Product">Shop</a></h4>
             <a class="basket">
-                <div class="basket-count">2</div>
-                <img src="imgages/basket-light.svg" alt="">
+                @*<div class="basket-count">2</div>*@
+                <img src="~/images/basket-light.svg" alt="basket">
             </a>
         </nav>
 
     </header>
     <div id="hero">
         <div class="video-container">
-            <video loop src="~/images/cottonbro.mp4" autoplay poster="~images/cottonbro.jpg"></video>
+            <video loop src="~/images/cottonbro.mp4" autoplay poster="~images/cottenbro.jpg"></video>
+            <img src="~/images/cottenbro.jpg" />
         </div>
         <div class="pageHeading">
-            <h1><img class="logo" src="img/farmfair-logo1.svg" alt="farmfair"></h1>
+            <h1><img class="logo" src="~/images/farmfair-logo1.svg" alt="farmfair"></h1>
             <h3 class="description">Get fresh excess produce and meats directly from the farm</h3>
         </div>
 
@@ -122,9 +128,11 @@
             }
     </section>
     <section id="story" class="container">
-        <h2>Our Story</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae itaque amet nesciunt, rem cumque sit officia blanditiis, pariatur ipsa doloremque sequi quo esse iste repudiandae!</p>
-        <a href="#" class="downArrow">&#709;</a>
+        <img class="drawing" src="~/images/drawing3.svg" alt="growing carrot">
+        <h2 id="storyTitle">Our Story</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+        <div class="readMore">
+            <a href="#storyTitle" class="downArrow" onclick="myFunction()" id="myBtn">&#65516;</a>
     </section>
     <section id="recipes">
         <h2>Inspiration</h2>
@@ -234,12 +242,7 @@
 
 
 
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <script src="~/js/main.js"></script>
 </body>
 
 </html>
