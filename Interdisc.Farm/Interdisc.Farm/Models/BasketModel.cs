@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Interdisc.Farm.Models
 {
@@ -20,6 +21,19 @@ namespace Interdisc.Farm.Models
                 }
                 return count;
             } }
+        //total total price in basket
+        public decimal ComputeTotalValue(List<ProductModel> products)
+        {
+            decimal total = 0;
+
+            foreach (var item in Items)
+            {
+                var product = products.Where(p => p.ProductModelId == item.ProductId).First();
+                total += item.Quantity * product.Price;
         
+            }
+            return total;
+        }
+
     }
 }
