@@ -20,10 +20,38 @@ namespace Interdisc.Farm.Controllers
         {
             _context = context;
         }
+        [HttpPost] 
+        public async Task<IActionResult> AddProductToBasket(int id, int quantity)
+        {
+            var basket = GetBasket();
+            var items = basket.Items.Where(item => item.ProductId == id).ToList();
+            if (items.Count() > 0)
+                items[0].Quantity+=quantity;
+            else
+            {
+                basket.Items.Add(new BasketItem
+                {
+                    ProductId = (int)id,
+                    Quantity = quantity,
+                    
+                });
+            }
 
 
-        // GET: Product/Index/5
-        public async Task<IActionResult> Index()
+            SaveBasket(basket);
+
+            var groups = _context.ProductGroupModel.ToList();
+            var products = _context.ProductModel.ToList();
+            var model = new Tuple<List<ProductGroupModel>, List<ProductModel>, BasketModel>(
+               groups,
+               products,
+               basket
+               );
+            return View("Index", model);
+        }
+
+                // GET: Product/Index/5
+                public async Task<IActionResult> Index()
         {
             var basket = GetBasket();
             var groups = _context.ProductGroupModel.ToList();
