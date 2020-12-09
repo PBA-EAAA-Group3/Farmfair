@@ -4,12 +4,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Interdisc.Farm</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
     <link rel="stylesheet" href="~/css/main.css" />
     <link rel="stylesheet" href="~/css/custom.css" />
     <link rel="stylesheet" href="~/css/normalize.css" />
 </head>
 <body>
-    
+    <header>
+        <nav class="container">
+            <h4 class="home"><a asp-action="Index" asp-controller="Home">Home</a></h4>
+            @if(ViewData["ItemCount"] != null)
+            {
+                <a class="basket" asp-action="Index" asp-controller="Basket">
+                    @ViewData["ItemCount"]
+                    <img src="~/images/basket-light.svg" alt="basket">
+                </a>
+            }
+            
+        </nav>
 
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - Interdisc.Farm - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+  
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
