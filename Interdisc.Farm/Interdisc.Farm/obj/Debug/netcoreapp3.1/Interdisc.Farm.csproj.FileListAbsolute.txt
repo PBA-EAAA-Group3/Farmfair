@@ -191,3 +191,5 @@ C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\ne
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\OrderItems\Index.cshtml.g.cs
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.csprojAssemblyReference.cache
 C:\Users\ruthm\Desktop\Interdisc.Proj\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs
+C:\Users\JeanetteNordAa\OneDrive\Skrivebord\Fag\Frontend\Github\Farmfair\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.dll
+C:\Users\JeanetteNordAa\OneDrive\Skrivebord\Fag\Frontend\Github\Farmfair\Interdisc.Farm\Interdisc.Farm\obj\Debug\netcoreapp3.1\Interdisc.Farm.pdb
