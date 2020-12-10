@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ruthm\\Desktop\\Interdisc.Proj\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj": {}
+    "C:\\Users\\JeanetteNordAa\\Source\\Repos\\PBA-EAAA-Group3\\Farmfair\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ruthm\\Desktop\\Interdisc.Proj\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj": {
+    "C:\\Users\\JeanetteNordAa\\Source\\Repos\\PBA-EAAA-Group3\\Farmfair\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ruthm\\Desktop\\Interdisc.Proj\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj",
+        "projectUniqueName": "C:\\Users\\JeanetteNordAa\\Source\\Repos\\PBA-EAAA-Group3\\Farmfair\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj",
         "projectName": "Interdisc.Farm",
-        "projectPath": "C:\\Users\\ruthm\\Desktop\\Interdisc.Proj\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj",
-        "packagesPath": "C:\\Users\\ruthm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ruthm\\Desktop\\Interdisc.Proj\\Interdisc.Farm\\Interdisc.Farm\\obj\\",
+        "projectPath": "C:\\Users\\JeanetteNordAa\\Source\\Repos\\PBA-EAAA-Group3\\Farmfair\\Interdisc.Farm\\Interdisc.Farm\\Interdisc.Farm.csproj",
+        "packagesPath": "C:\\Users\\JeanetteNordAa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JeanetteNordAa\\Source\\Repos\\PBA-EAAA-Group3\\Farmfair\\Interdisc.Farm\\Interdisc.Farm\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ruthm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JeanetteNordAa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
