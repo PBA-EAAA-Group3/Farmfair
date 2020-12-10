@@ -1,25 +1,42 @@
 ﻿<Properties StartupConfiguration="{BF359E9A-9D15-4E1D-A327-7CAA32D34956}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Interdisc.Farm/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="Interdisc.Farm/Views/Shared/_Layout.cshtml" Line="12" Column="5" />
+      <File FileName="Interdisc.Farm/Views/Shared/_Layout.cshtml" Line="31" Column="4" />
+      <File FileName="Interdisc.Farm/Views/Home/Index.cshtml" Line="1" Column="31" />
+      <File FileName="Interdisc.Farm/wwwroot/css/main.css" Line="31" Column="30" />
+      <File FileName="Interdisc.Farm/Views/Basket/Index.cshtml" Line="18" Column="30" />
+      <File FileName="Interdisc.Farm/Views/Product/Index.cshtml" Line="23" Column="52" />
+      <File FileName="Interdisc.Farm/Views/ProductGroup/Index.cshtml" Line="25" Column="69" />
+      <File FileName="Interdisc.Farm/Models/ProductGroupModel.cs" Line="1" Column="1" />
+      <File FileName="Interdisc.Farm/Models/ProductModel.cs" Line="35" Column="28" />
+      <File FileName="Interdisc.Farm/Views/Customer/Create.cshtml" Line="34" Column="19" />
+      <File FileName="Interdisc.Farm/Views/Customer/Index.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Interdisc.Farm" expanded="True">
             <Node name="Interdisc.Farm" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Basket" expanded="True" />
+                <Node name="Customer" expanded="True" />
                 <Node name="Home" expanded="True" />
+                <Node name="Product" expanded="True" />
+                <Node name="ProductGroup" expanded="True" />
                 <Node name="Shared" expanded="True">
                   <Node name="_Layout.cshtml" selected="True" />
                 </Node>
               </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

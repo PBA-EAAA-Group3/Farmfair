@@ -344,37 +344,37 @@ border-radius: 20px;
 
 
 .fruit{
-    background-image: url('../img/fruit.jpg');
+    background-image: url('../images/fruit.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 
 }
 .veggies{
-    background-image: url('../img/veggies.jpg');
+    background-image: url('../images/veggies.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 
 }
 .meat{
-    background-image: url('../img/meats.jpg');
+    background-image: url('../images/meats.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 
 }
 .dairy{
-    background-image: url('../img/dairy.jpg');
+    background-image: url('../images/dairy.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 
 }
 .eggs{
-    background-image: url('../img/eggs.jpg');
+    background-image: url('../images/eggs.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 
 }
 .honey{
-    background-image: url('../img/honey.jpg');
+    background-image: url('../images/honey.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -416,7 +416,7 @@ border-radius: 20px;
 
 #recipes {
   background-color: #fdfdfd;
-  background-image: url('../img/eggsbg.jpg');
+  background-image: url('../images/eggsbg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -477,7 +477,7 @@ border-radius: 20px;
 
 .storeHero{
 
-    background: url('../img/vegetables.jpg') no-repeat !important;
+    background: url('../images/vegetables.jpg') no-repeat !important;
     background-size: cover !important;
 }
 
@@ -602,7 +602,7 @@ section#cta {
 }
 
 .cta1 {
-  background: url('../img/field.jpg') no-repeat;
+  background: url('../images/field.jpg') no-repeat;
 }
 
 #cta .container {
