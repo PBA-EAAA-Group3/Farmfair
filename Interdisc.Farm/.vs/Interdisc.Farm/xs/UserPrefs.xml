@@ -1,0 +1,44 @@
+﻿<Properties StartupConfiguration="{BF359E9A-9D15-4E1D-A327-7CAA32D34956}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Interdisc.Farm/Controllers/BasketController.cs">
+    <Files>
+      <File FileName="Interdisc.Farm/Views/Basket/Index.cshtml" Line="11" Column="70" />
+      <File FileName="Interdisc.Farm/Controllers/BasketController.cs" Line="25" Column="42" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Interdisc.Farm" expanded="True">
+            <Node name="Interdisc.Farm" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True">
+                <Node name="BasketController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Basket" expanded="True" />
+                <Node name="Customer" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Invoice" expanded="True" />
+                <Node name="Product" expanded="True" />
+                <Node name="ProductGroup" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Interdisc.Farm PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
