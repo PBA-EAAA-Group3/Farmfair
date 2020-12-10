@@ -1,0 +1,159 @@
+/*
+large mobile
+*/
+@media only screen and (min-width: 568px) {
+
+  /*
+  Global styles - spacing
+  */
+
+  .container{
+      margin: 0 auto;
+      padding: 0 7.5rem;
+  }
+
+  .container-small {
+    padding: 0 4rem;
+  }
+
+
+  /*
+  Global styles - Typography
+  */
+
+  h2{
+      font-size: 5.75rem;
+      margin-bottom: 5rem;
+  }
+
+
+  .gradSectionSolid {
+    height: 8rem;
+    background: #212121;
+  }
+
+  .gradSectionFade {
+    height: 2rem;
+    background: rgba(33, 33, 33, 1);
+    background: linear-gradient(180deg, rgba(33,33,33,1) 0%, rgba(33,33,33,.9) 100%);
+  }
+
+  .grid-category{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2em;
+      max-width: 800px;
+  }
+
+  #recipes .recipe-filter {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    margin-bottom: 176px;
+  }
+
+  #recipes .recipe-grid {
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  }
+
+}
+
+
+
+/*
+Tablet
+*/
+@media only screen and (min-width: 768px) {
+
+
+  /*
+  Global styles - spacing
+  */
+
+
+
+  #recipes .recipe-grid {
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  }
+
+
+
+#store-grid {
+  grid-template-columns: repeat(2, 250px) !important;
+}
+
+
+  /*Footer*/
+
+
+
+  footer .links{
+    grid-template-columns: repeat(3, auto);
+    justify-items: center;
+
+  }
+
+  footer .links a {
+      margin-bottom: 1rem;
+      text-align: right;
+  }
+
+
+}
+
+/*
+laptop
+*/
+@media only screen and (min-width: 992px) {
+
+  /*Footer*/
+  footer{
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+
+  }
+
+  footer .links a {
+      margin-bottom: 0;
+  }
+
+
+  /*container*/
+  #cta .container {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  section#cta {
+
+    padding: 15vh 0;
+  }
+
+
+  #store {
+    display: grid;
+    grid-template-columns: 224px 1fr;
+  }
+
+  #store aside{
+    display: block !important;
+    margin-right: 2rem;
+  }
+
+
+}
+
+/*
+Large desktop
+*/
+@media only screen and (min-width: 1140px) {
+
+
+  #store-grid {
+    grid-template-columns: repeat(3, 250px) !important;
+  }
+
+}
