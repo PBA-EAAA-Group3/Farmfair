@@ -1,0 +1,122 @@
+.checkoutContainer{
+    max-width: 812px;
+    margin: 0 auto;
+}
+#checkoutForm{
+    margin: 4rem 0;
+}
+
+#checkoutForm .billingAddress{
+    width: 500px;
+    padding-right: 100px;
+}
+
+#checkoutForm .payment{
+    width: 500px;
+    margin-top: 72px;
+    padding-right: 100px;
+}
+
+.checkoutBox{
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.cartContainer{
+    background: #f29722;
+    border-radius: 20px;
+    padding: 20px;
+    width: 300px;
+    align-self: center;
+    margin-top: 50px;
+}
+
+.cartContainer a{
+    color: #212121;
+}
+
+.cartContainer p{
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.billingCart hr{
+    border-top-color: #212121;
+}
+
+.billingAddress h3{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.payment h3{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.payment .btn{
+    display: block;
+    margin: 0 auto;
+}
+
+
+/*
+Invoice
+*/
+
+#invoiceInner {
+  background: #fdfdfd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  margin: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+#invoiceInner p {
+  font-size: 0.9rem !important;
+}
+
+.invoiceData {
+  padding-bottom: 7rem;
+}
+
+.invoiceData, .customerInfo {
+  justify-self: end;
+}
+
+.customerInfo {
+  padding-bottom: 7rem;
+}
+
+
+.invocie-full {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 1rem;
+}
+
+.invocie-full:nth-child(even) {
+  background: #d3d3d3;
+}
+
+.invocie-full:nth-child(odd) {
+  background: #ffffff;
+}
+
+.gatheredItems p {
+  font-weight: 700;
+}
+
+.invoiceTotal {
+  justify-content: flex-end;
+  text-transform: uppercase;
+}
