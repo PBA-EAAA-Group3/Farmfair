@@ -1,4 +1,5 @@
 ﻿@model List<ProductGroupModel>
+
 @{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,142 +7,145 @@
 }
 
 
-    <div id="hero">
-        <div class="video-container">
-            <video loop src="~/images/cottonbro.mp4" autoplay poster="~images/cottenbro.jpg"></video>
-            <img src="~/images/cottenbro.jpg" />
-        </div>
-        <div class="pageHeading">
-            <h1><img class="logo" src="~/images/farmfair-logo1.svg" alt="farmfair"></h1>
-            <h3 class="description">Get fresh excess produce and meats directly from the farm</h3>
-        </div>
-
+<div id="hero">
+    <div class="video-container">
+        <video loop src="~/images/cottonbro.mp4" autoplay poster="~images/cottenbro.jpg"></video>
+        <img src="~/images/cottenbro.jpg" />
+    </div>
+    <div class="pageHeading">
+        <h1><img class="logo" src="~/images/farmfair-logo1.svg" alt="farmfair"></h1>
+        <h3 class="description">Get fresh excess produce and meats directly from the farm</h3>
     </div>
 
-    <div class="gradSectionSolid"></div>
-    <section id="categories">
+</div>
 
-        <div class="grid-category">
-            @foreach (var group in Model)
-            {
+<div class="gradSectionSolid"></div>
+<section id="categories">
 
-                <div class="card">
-                    <p> <a class="cat-overlay" asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
+    <div class="grid-category">
+        @foreach (var group in Model)
+        {
+
+        <div class="card">
+            <p> <a class="cat-overlay" asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
+          
+        </div>
+
+
+        }
+</section>
+<section id="story" class="container">
+    <img class="drawing" src="~/images/drawing3.svg" alt="growing carrot">
+    <h2 id="storyTitle">Our Story</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+    <div class="readMore">
+        <a href="#storyTitle" class="downArrow" onclick="myFunction()" id="myBtn">&#65516;</a>
+
+        </div>
+</section>
+<section id="recipes">
+    <h2>Inspiration</h2>
+    <div class="recipe-filter container">
+        <a href="#" class="btn btn_primary">Breakfast</a>
+        <a href="#" class="btn btn_primary">Beverages</a>
+        <a href="#" class="btn btn_primary">Main</a>
+        <a href="#" class="btn btn_primary">Dessert</a>
+        <a href="#" class="btn btn_primary">Appetizers</a>
+    </div>
+    <div class="recipe-grid container-small">
+
+        <div class="recipe-card">
+            <a href="#" class="">
+                <img src="https://picsum.photos/300/200" alt="">
+                <div class="recipe-card-info">
+                    <h3 class="small">Spaghetti bolognese</h3>
+                    <div class="recipe-card-info-facts">
+                        <div class="level">easy</div>
+                        <div class="recipe-time">30 min</div>
+                    </div>
                 </div>
 
-
-            }
-    </section>
-    <section id="story" class="container">
-        <img class="drawing" src="~/images/drawing3.svg" alt="growing carrot">
-        <h2 id="storyTitle">Our Story</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
-        <div class="readMore">
-            <a href="#storyTitle" class="downArrow" onclick="myFunction()" id="myBtn">&#65516;</a>
-    </section>
-    <section id="recipes">
-        <h2>Inspiration</h2>
-        <div class="recipe-filter container">
-            <a href="#" class="btn btn_primary">Breakfast</a>
-            <a href="#" class="btn btn_primary">Beverages</a>
-            <a href="#" class="btn btn_primary">Main</a>
-            <a href="#" class="btn btn_primary">Dessert</a>
-            <a href="#" class="btn btn_primary">Appetizers</a>
+            </a>
         </div>
-        <div class="recipe-grid container-small">
-
-            <div class="recipe-card">
-                <a href="#" class="">
-                    <img src="https://picsum.photos/300/200" alt="">
-                    <div class="recipe-card-info">
-                        <h3 class="small">Spaghetti bolognese</h3>
-                        <div class="recipe-card-info-facts">
-                            <div class="level">easy</div>
-                            <div class="recipe-time">30 min</div>
-                        </div>
+        <div class="recipe-card">
+            <a href="#" class="">
+                <img src="https://picsum.photos/300/200" alt="">
+                <div class="recipe-card-info">
+                    <h3 class="small">Spaghetti bolognese</h3>
+                    <div class="recipe-card-info-facts">
+                        <div class="level">easy</div>
+                        <div class="recipe-time">30 min</div>
                     </div>
+                </div>
 
-                </a>
-            </div>
-            <div class="recipe-card">
-                <a href="#" class="">
-                    <img src="https://picsum.photos/300/200" alt="">
-                    <div class="recipe-card-info">
-                        <h3 class="small">Spaghetti bolognese</h3>
-                        <div class="recipe-card-info-facts">
-                            <div class="level">easy</div>
-                            <div class="recipe-time">30 min</div>
-                        </div>
-                    </div>
-
-                </a>
-            </div>
-            <div class="recipe-card">
-                <a href="#" class="">
-                    <img src="https://picsum.photos/300/200" alt="">
-                    <div class="recipe-card-info">
-                        <h3 class="small">Spaghetti bolognese</h3>
-                        <div class="recipe-card-info-facts">
-                            <div class="level">easy</div>
-                            <div class="recipe-time">30 min</div>
-                        </div>
-                    </div>
-
-                </a>
-            </div>
-            <div class="recipe-card">
-                <a href="#" class="">
-                    <img src="https://picsum.photos/300/200" alt="">
-                    <div class="recipe-card-info">
-                        <h3 class="small">Spaghetti bolognese</h3>
-                        <div class="recipe-card-info-facts">
-                            <div class="level">easy</div>
-                            <div class="recipe-time">30 min</div>
-                        </div>
-                    </div>
-
-                </a>
-            </div>
-            <div class="recipe-card">
-                <a href="#" class="">
-                    <img src="https://picsum.photos/300/200" alt="">
-                    <div class="recipe-card-info">
-                        <h3 class="small">Spaghetti bolognese</h3>
-                        <div class="recipe-card-info-facts">
-                            <div class="level">easy</div>
-                            <div class="recipe-time">30 min</div>
-                        </div>
-                    </div>
-
-                </a>
-            </div>
-            <div class="recipe-card">
-                <a href="#" class="">
-                    <img src="https://picsum.photos/300/200" alt="">
-                    <div class="recipe-card-info">
-                        <h3 class="small">Spaghetti bolognese</h3>
-                        <div class="recipe-card-info-facts">
-                            <div class="level">easy</div>
-                            <div class="recipe-time">30 min</div>
-                        </div>
-                    </div>
-
-                </a>
-            </div>
-
-
+            </a>
         </div>
-    </section>
-    <section id="map"></section>
-    <footer>
-        <div class="contact">
-            <a href="mailto:zerowaist@farmfair.com">zerowaste@farmfair.com</a>
-        </div>
-        <div class="links">
-            <a href="#">Terms of Conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Cookie Policy</a>
-        </div>
-    </footer>
+        <div class="recipe-card">
+            <a href="#" class="">
+                <img src="https://picsum.photos/300/200" alt="">
+                <div class="recipe-card-info">
+                    <h3 class="small">Spaghetti bolognese</h3>
+                    <div class="recipe-card-info-facts">
+                        <div class="level">easy</div>
+                        <div class="recipe-time">30 min</div>
+                    </div>
+                </div>
 
-    <script src="~/js/main.js"></script>
+            </a>
+        </div>
+        <div class="recipe-card">
+            <a href="#" class="">
+                <img src="https://picsum.photos/300/200" alt="">
+                <div class="recipe-card-info">
+                    <h3 class="small">Spaghetti bolognese</h3>
+                    <div class="recipe-card-info-facts">
+                        <div class="level">easy</div>
+                        <div class="recipe-time">30 min</div>
+                    </div>
+                </div>
+
+            </a>
+        </div>
+        <div class="recipe-card">
+            <a href="#" class="">
+                <img src="https://picsum.photos/300/200" alt="">
+                <div class="recipe-card-info">
+                    <h3 class="small">Spaghetti bolognese</h3>
+                    <div class="recipe-card-info-facts">
+                        <div class="level">easy</div>
+                        <div class="recipe-time">30 min</div>
+                    </div>
+                </div>
+
+            </a>
+        </div>
+        <div class="recipe-card">
+            <a href="#" class="">
+                <img src="https://picsum.photos/300/200" alt="">
+                <div class="recipe-card-info">
+                    <h3 class="small">Spaghetti bolognese</h3>
+                    <div class="recipe-card-info-facts">
+                        <div class="level">easy</div>
+                        <div class="recipe-time">30 min</div>
+                    </div>
+                </div>
+
+            </a>
+        </div>
+
+
+    </div>
+</section>
+<section id="map"></section>
+<footer>
+    <div class="contact">
+        <a href="mailto:zerowaist@farmfair.com">zerowaste@farmfair.com</a>
+    </div>
+    <div class="links">
+        <a href="#">Terms of Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+    </div>
+</footer>
+
+<script src="~/js/main.js"></script>
