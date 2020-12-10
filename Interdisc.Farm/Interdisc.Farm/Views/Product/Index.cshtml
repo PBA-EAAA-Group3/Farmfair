@@ -39,14 +39,15 @@
 
                 <div class="storeCard">
                     <div class="storeCat">
-                        <p class="label">Category</p>
+                        <h3 class="small">@Html.DisplayFor(modelItem => item.ProductName)</h3>
+                        @*<p class="label">@item.ProductModelId</p>*@
                     </div>
-                    @Html.DisplayFor(modelItem => item.ProductName)
+                    
                     <img src="@GetProductImageUrl(item)" />
                   
                     <form class="addToBasket" action="/Product/AddProductToBasket" method="post">
                         @*<h3 class="small">Apples</h3>*@
-                        <input type="hidden" name="id" value="@item.ProductModelId"/>
+                        <input type="hidden" name="id" value="@item.ProductModelId" />
                         <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0" asp-action="Quantity" asp-route-id="@item.ProductModelId">
                         <button class="addButton label" type="submit">Add</button>
                         <span class="label stk">5 stk</span>
