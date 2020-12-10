@@ -1,5 +1,7 @@
 ﻿@model List<ProductGroupModel>
-
+@{
+    string GetGroupImageUrl(ProductGroupModel group) => $"/images/" + $"{group.ProductGroupName.ToLower().Replace(' ', '-')}.jpg";
+}
 @{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -25,10 +27,17 @@
     <div class="grid-category">
         @foreach (var group in Model)
         {
-
+           
         <div class="card">
-            <p> <a class="cat-overlay" asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
-          
+
+            <p>
+
+                <a @*class="cat-overlay"*@ asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">
+                    <img class="cat-overlay" src="@GetGroupImageUrl(group)" />
+                </a>
+
+            </p>
+            @group.ProductGroupName
         </div>
 
 
@@ -41,7 +50,7 @@
     <div class="readMore">
         <a href="#storyTitle" class="downArrow" onclick="myFunction()" id="myBtn">&#65516;</a>
 
-        </div>
+    </div>
 </section>
 <section id="recipes">
     <h2>Inspiration</h2>
