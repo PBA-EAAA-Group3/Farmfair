@@ -22,31 +22,25 @@
 </div>
 
 <div class="gradSectionSolid"></div>
-<section id="categories">
+    <section id="categories">
 
-    <div class="grid-category">
-        @foreach (var group in Model)
-        {
-
+        <div class="grid-category">
+            @foreach (var group in Model)
+            {
             <div class="card">
-
-
-
-                <a @*class="cat-overlay"*@ asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId" >
-                    <p>
+                <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">
+                    <img class="cat-overlay" src="@GetGroupImageUrl(group)"/>
+                    <p class="cat-overlay">
                         @group.ProductGroupName
                     </p>
+                </a>
+            </div>
+            }
 
-                    <img class="cat-overlay" src="@GetGroupImageUrl(group)" />
-                   
-                    </a>
+        </div>
 
+    </section>
 
-</div>
-          
-
-        }
-</section>
 <section id="story" class="container">
     <img class="drawing" src="~/images/drawing3.svg" alt="growing carrot">
     <h2 id="storyTitle">Our Story</h2>
