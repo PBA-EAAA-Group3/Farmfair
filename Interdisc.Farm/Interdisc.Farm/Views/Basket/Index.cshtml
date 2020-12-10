@@ -4,61 +4,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="basketGrid container">
 
-<table>
-    <thead>
-        <tr>
-            <th>Item</th>
-            <th>Price</th>
-            <th>Subtotal</th>
-            <th>Quantity</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Item3.Items)
-        {
-            var product = Model.Item2.Where(product => product.ProductModelId == item.ProductId).First();
-            <tr>
-                <td>
-                    @product.ProductName
-                </td>
-                <td>
-                    @product.Price
-                </td>
-                <td>
-                    @(item.Quantity*product.Price)
-                </td>
-                <td>
-                    <form class="addToBasket" action="/Basket/UpdateBasket" method="post">
-                        <input type="hidden" name="id" value="@item.ProductId" />
-                        <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="@item.Quantity" asp-action="Quantity" asp-route-id="@item.ProductId">
-                        <button class="addButton label" type="submit">Update</button>
+    <div class="basketHeading"><strong>Item</strong></div>
+    <div class="basketHeading"><strong>Price</strong></div>
+    <div class="basketHeading"><strong>Subtotal</strong></div>
+    <div class="basketHeading"><strong>Quantity</strong></div>
 
-                    </form>
-                    <form class="addToBasket" action="/Basket/RemoveBasket" method="post">
-                        <input type="hidden" name="id" value="@item.ProductId" />
+    @foreach (var item in Model.Item3.Items)
+    {
+        var product = Model.Item2.Where(product => product.ProductModelId == item.ProductId).First();
 
-                        <button class="addButton label" type="submit">Remove</button>
+        <div class="basketItem">@product.ProductName</div>
+        <div class="basketItem">@product.Price</div>
+        <div class="basketItem">@(item.Quantity*product.Price)</div>
+        <div class="basketItem flex">
+            <form class="basketItemForm" action="/Basket/UpdateBasket" method="post">
+                <input type="hidden" name="id" value="@item.ProductId" />
+                <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="@item.Quantity" asp-action="Quantity" asp-route-id="@item.ProductId">
+                <button class="label" type="submit"><i class="sun feather-refresh-cw"></i></button>
 
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3" class="text-right">Total:</td>
-            <td class="text-right">
-                @Model.Item3.ComputeTotalValue(Model.Item2).ToString("c")
-            </td>
-        </tr>
-    </tfoot>
-</table>
-<div class="text-center">
-    <a class="btn btn-primary" asp-action="Index" asp-controller="Product">Continue shopping</a>
-    <a class="btn btn-primary" asp-action="Index" asp-controller="Customer">
-        Checkout
-    </a>
-   
+            </form>
+            <form class="basketRemove" action="/Basket/RemoveBasket" method="post">
+                <input type="hidden" name="id" value="@item.ProductId" />
+
+                <button class="label" type="submit"><i class="olive feather-x-circle"></i></button>
+
+            </form>
+        </div>
+    }
+<div class="basketItem">
+    @Model.Item3.ComputeTotalValue(Model.Item2).ToString("c")
 </div>
 
+        <div class="basketButtons flex">
+            <a class="btn btn-primary" asp-action="Index" asp-controller="Product">Continue shopping</a>
+            <a class="btn btn-primary" asp-action="Checkout" asp-controller="Order">Checkout</a>
+        </div>
+
+    </div><!--End basket summary-->
