@@ -7,7 +7,7 @@
 
 
 <div class="checkoutContainer">
-    <form id="checkoutForm" asp-action="Index">
+    <form id="checkoutForm" asp-action="Create">
         <div class="flex billingCart">
             <div class="billingAddress">
                 <h3>Billing Address</h3>
@@ -62,7 +62,7 @@
             <input type="text" id="expyear" class="checkoutBox" name="expyear" placeholder="2018">
             <label for="cvv">CVV</label>
             <input type="text" id="cvv" class="checkoutBox" name="cvv" placeholder="352">
-            <input type="submit" value="LogIn" class="btn btn_primary" asp-action="Index" asp-controller="Invoice">
+            <input type="submit" value="Checkout" class="btn btn_primary">
           
         </div>
     </form>
