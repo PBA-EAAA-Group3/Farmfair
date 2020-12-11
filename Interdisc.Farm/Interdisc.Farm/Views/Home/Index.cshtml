@@ -1,5 +1,7 @@
 ﻿@model List<ProductGroupModel>
-
+@{
+    string GetGroupImageUrl(ProductGroupModel group) => $"/images/" + $"{group.ProductGroupName.ToLower().Replace(' ', '-')}.jpg";
+}
 @{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -20,20 +22,25 @@
 </div>
 
 <div class="gradSectionSolid"></div>
-<section id="categories">
+    <section id="categories">
 
-    <div class="grid-category">
-        @foreach (var group in Model)
-        {
+        <div class="grid-category">
+            @foreach (var group in Model)
+            {
+            <div class="card">
+                <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">
+                    <img class="cat-overlay" src="@GetGroupImageUrl(group)"/>
+                    <p class="cat-overlay">
+                        @group.ProductGroupName
+                    </p>
+                </a>
+            </div>
+            }
 
-        <div class="card">
-            <p> <a class="cat-overlay" asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
-          
         </div>
 
+    </section>
 
-        }
-</section>
 <section id="story" class="container">
     <img class="drawing" src="~/images/drawing3.svg" alt="growing carrot">
     <h2 id="storyTitle">Our Story</h2>
@@ -41,7 +48,7 @@
     <div class="readMore">
         <a href="#storyTitle" class="downArrow" onclick="myFunction()" id="myBtn">&#65516;</a>
 
-        </div>
+    </div>
 </section>
 <section id="recipes">
     <h2>Inspiration</h2>
