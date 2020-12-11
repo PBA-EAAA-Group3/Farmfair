@@ -4,33 +4,43 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Interdisc.Farm</title>
-    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
-    <link rel="stylesheet" href="~/css/main.css" />
-    <link rel="stylesheet" href="~/css/custom.css" />
-    <link rel="stylesheet" href="~/css/normalize.css" />
+    <link rel="stylesheet" href="~/css/farmfair.css" />
+
 </head>
 <body>
     <header>
         <nav class="container">
             <h4 class="home"><a asp-action="Index" asp-controller="Home">Home</a></h4>
-            @if(ViewData["ItemCount"] != null)
+            <h4><a asp-action="Index" asp-controller="Product">Products</a></h4>
+            @if (ViewData["ItemCount"] != null)
             {
+                
                 <a class="basket" asp-action="Index" asp-controller="Basket">
-                    @ViewData["ItemCount"]
+                    <div class="basket-count">@ViewData["ItemCount"]</div>
                     <img src="~/images/basket-light.svg" alt="basket">
                 </a>
             }
-            
+
         </nav>
 
     </header>
-    
-            @RenderBody()
-       
 
-   
 
-  
+
+    @RenderBody()
+
+    <footer>
+        <div class="contact">
+            <a href="mailto:zerowaist@farmfair.com">zerowaste@farmfair.com</a>
+        </div>
+        <div class="links">
+            <a href="#">Terms of Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+        </div>
+    </footer>
+
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -21,6 +21,10 @@ large mobile
   Global styles - Typography
   */
 
+  h1{
+      font-size: 5.75rem;
+  }
+
   h2{
       font-size: 5.75rem;
       margin-bottom: 5rem;
@@ -40,7 +44,7 @@ large mobile
 
   .grid-category{
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 2em;
       max-width: 800px;
   }
@@ -58,6 +62,11 @@ large mobile
 
   }
 
+  .basketGrid .basketButtons {
+
+    flex-direction: row;
+  }
+
 }
 
 
@@ -68,9 +77,25 @@ Tablet
 @media only screen and (min-width: 768px) {
 
 
-  /*
-  Global styles - spacing
-  */
+  h1.big {
+    font-size: 12rem;
+  }
+
+
+  .btn {
+    padding: 32px 48px;
+    font-size: 0.9rem;
+
+  }
+
+
+
+
+  .grid-category{
+
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  }
 
 
 
@@ -85,6 +110,18 @@ Tablet
 #store-grid {
   grid-template-columns: repeat(2, 250px) !important;
 }
+
+
+.basketGrid {
+  padding: 8vh 3rem;
+  margin: 8vh 8vw;
+}
+
+.basketItemForm .quantity {
+    width: 72px;
+}
+
+
 
 
   /*Footer*/
@@ -109,6 +146,13 @@ Tablet
 laptop
 */
 @media only screen and (min-width: 992px) {
+
+
+  #hero{
+
+      height: 90vh;
+
+  }
 
   /*Footer*/
   footer{
@@ -141,6 +185,13 @@ laptop
   #store aside{
     display: block !important;
     margin-right: 2rem;
+  }
+
+
+  .basketGrid {
+
+    padding: 10.75vh 3rem;
+    margin: 15vh 15vw;
   }
 
 

@@ -1,5 +1,7 @@
 ﻿@model List<ProductGroupModel>
-
+@{
+    string GetGroupImageUrl(ProductGroupModel group) => $"/images/" + $"{group.ProductGroupName.ToLower().Replace(' ', '-')}.jpg";
+}
 @{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -14,26 +16,31 @@
     </div>
     <div class="pageHeading">
         <h1><img class="logo" src="~/images/farmfair-logo1.svg" alt="farmfair"></h1>
-        <h3 class="description">Get fresh excess produce and meats directly from the farm</h3>
+        <h3 class="mCenter description">Get fresh excess produce and meats directly from the farm</h3>
     </div>
 
 </div>
 
 <div class="gradSectionSolid"></div>
-<section id="categories">
+    <section id="categories">
 
-    <div class="grid-category">
-        @foreach (var group in Model)
-        {
+        <div class="grid-category">
+            @foreach (var group in Model)
+            {
+            <div class="card">
+                <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">
+                    <img class="cat-overlay" src="@GetGroupImageUrl(group)"/>
+                    <h3 class="cat-overlay">
+                        @group.ProductGroupName
+                    </h3>
+                </a>
+            </div>
+            }
 
-        <div class="card">
-            <p> <a class="cat-overlay" asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">@group.ProductGroupName</a></p>
-          
         </div>
 
+    </section>
 
-        }
-</section>
 <section id="story" class="container">
     <img class="drawing" src="~/images/drawing3.svg" alt="growing carrot">
     <h2 id="storyTitle">Our Story</h2>
@@ -41,7 +48,7 @@
     <div class="readMore">
         <a href="#storyTitle" class="downArrow" onclick="myFunction()" id="myBtn">&#65516;</a>
 
-        </div>
+    </div>
 </section>
 <section id="recipes">
     <h2>Inspiration</h2>
@@ -136,16 +143,24 @@
 
     </div>
 </section>
-<section id="map"></section>
-<footer>
-    <div class="contact">
-        <a href="mailto:zerowaist@farmfair.com">zerowaste@farmfair.com</a>
-    </div>
-    <div class="links">
-        <a href="#">Terms of Conditions</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Cookie Policy</a>
-    </div>
-</footer>
+<section id="cta" class="cta1">
+    <div class="container">
+        <div class="leftArea text">
+            <h2 class="sun">It's about more <br> than food waste</h2>
+            <h3>Easy support of your local farming community, whilst not compromising on quality.</h3>
+        </div>
+        <div class="rightArea">
+            <div class="signUpBox olive">
+
+                <h3>Recieve offers of <br>fresh produce near you</h3>
+                <form action="/">
+                    <input type="text" name="full-name" placeholder="Name">
+                    <input type="email" name="email" placeholder="Email">
+                    <h3><a href="#"><input type="submit" value="Sign up now" id="" class="btn_cta"> <i class="feather-chevron-right"></i></a></h3>
+                </form>
+            </div>
+        </div>
+</section>
+
 
 <script src="~/js/main.js"></script>

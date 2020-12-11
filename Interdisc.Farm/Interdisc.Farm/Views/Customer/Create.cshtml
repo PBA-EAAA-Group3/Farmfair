@@ -4,39 +4,68 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>CustomerModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+
+<div class="checkoutContainer">
+    <form id="checkoutForm" asp-action="Create">
+        <div class="flex billingCart">
+            <div class="billingAddress">
+                <h3>Billing Address</h3>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"><i class="feather-user"></i> First Name</label>
+                    <input asp-for="FirstName" type="text" class="checkoutBox form-control" name="fullname" placeholder="John M. Doe" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                        <label asp-for="Email" class="control-label"><i class="feather-mail"></i> Email</label>
+                        <input asp-for="Email" type="text" class="checkoutBox form-control" name="email" placeholder="john@zerowaste.com" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+               </div>
+
+                <div class="form-group">
+                            <label asp-for="Phone" class="control-label"><i class="feather-phone"></i> Phone</label>
+                            <input asp-for="Phone" type="text" class="checkoutBox form-control" name="phone" placeholder="12345678" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+                 <div class="form-group">
+                            <label for="pickUpPlaces"><i class="feather-map"></i> Pick Up Place</label>
+                            <select name="pickUp" id="pickUp" class="checkoutBox">
+                                <option value="atTheFarm">At the Farm</option>
+                                <option value="Dokk1">Dokk1</option>
+                            </select>
+                 </div>
+                        <div class="cartContainer">
+                            <h4>Shoppingcart:<span class="price" style="color:black"><i class="feather-shopping-cart"></i></span></h4>
+                            <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+                            <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+                            <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+                            <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+                            <hr>
+                            <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+                        </div>
+                </div>
+      </div>
+        <div class="payment">
+            <h3>Payment</h3>
+           
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" class="checkoutBox" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" class="checkoutBox" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" class="checkoutBox" name="expmonth" placeholder="September">
+            <label for="expyear">Exp Year</label>
+            <input type="text" id="expyear" class="checkoutBox" name="expyear" placeholder="2018">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" class="checkoutBox" name="cvv" placeholder="352">
+            <input type="submit" value="Checkout" class="btn btn_primary">
+          
+        </div>
+    </form>
 </div>
 
 <div>

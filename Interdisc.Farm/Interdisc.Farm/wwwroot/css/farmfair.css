@@ -1,0 +1,16 @@
+/*
+Importing styles
+*/
+
+
+/* overall styles*/
+@import 'normalize.css';
+@import 'main.css';
+@import 'global.css';
+@import 'feather.css';
+
+
+/* overriding styles*/
+@import 'checkout.css';
+@import 'custom.css';
+@import 'responsive.css';

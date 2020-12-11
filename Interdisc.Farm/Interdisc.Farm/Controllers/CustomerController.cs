@@ -60,7 +60,9 @@ namespace Interdisc.Farm.Controllers
             {
                 _context.Add(customerModel);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+               // return RedirectToAction(nameof(Index));
+                return View("Invoice", customerModel);
+
             }
             return View(customerModel);
         }

@@ -34,12 +34,12 @@
         </div>
     }
 <div class="basketItem">
-    @Model.Item3.ComputeTotalValue(Model.Item2).ToString("c")
+    Total: @Model.Item3.ComputeTotalValue(Model.Item2).ToString("c")
 </div>
 
         <div class="basketButtons flex">
             <a class="btn btn-primary" asp-action="Index" asp-controller="Product">Continue shopping</a>
-            <a class="btn btn-primary" asp-action="Checkout" asp-controller="Order">Checkout</a>
+            <a class="btn btn-primary" asp-action="Create" asp-controller="Customer">Checkout</a>
         </div>
 
     </div><!--End basket summary-->

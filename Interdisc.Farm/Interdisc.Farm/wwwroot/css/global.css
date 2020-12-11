@@ -1,0 +1,196 @@
+
+
+/*
+Global styles - spacing
+*/
+.container{
+    margin: 0 auto;
+    padding: 0 2rem;
+    max-width: 1440px;
+}
+
+.container-small {
+  padding: 0 1.5rem;
+}
+
+
+.grid {
+  display: grid;
+}
+
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.space-bottom {
+  padding-bottom: 6.25rem;
+}
+
+section {
+  padding-bottom: 15vh;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mCenter {
+  margin: 0 auto;
+}
+
+/*
+Global styles - Typography
+*/
+
+h1, h2, h3{
+    font-family: 'Londrina Solid', cursive;
+    margin: 0;
+    font-weight: 400;
+}
+
+h1{
+    font-size: 3.75rem;
+}
+
+h2{
+    font-size: 3.75rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+h3{
+    font-size: 2rem;
+    max-width: 500px;
+}
+
+h3.small{
+    font-size: 1.02rem;
+    letter-spacing: 0.5px;
+}
+
+h4{
+    font-size: 1.25rem;
+}
+
+p{
+    font-size: 1.125rem;
+    line-height: 1.7;
+    font-weight: 500;
+    max-width: 800px;
+}
+
+.label{
+    font-size: .8rem !important;
+}
+
+a{
+    text-decoration: none;
+    color: #f29722;
+    transition: all 0.5s linear;
+}
+
+.heading {
+  padding: 15vh 0 0;
+  margin-bottom: 0;
+}
+
+
+
+/*
+Global styles - Buttons
+*/
+
+.btn {
+  padding: 24px 36px;
+  line-height: 0;
+  text-transform: uppercase;
+  letter-spacing: .144em;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.btn_primary {
+  background: #f29722;
+  color: #212121;
+}
+
+.btn_primary:hover {
+  background: #9c8e61;
+  color: #fdfdfd;
+}
+
+.dark{
+    color: #212121 !important;
+}
+
+.downArrow{
+    color: #212121;
+    display: block;
+    text-align: center;
+    font-size: 2.8rem;
+    margin-top: 30px;
+}
+
+/*
+Global styles - Colors
+*/
+
+.white{
+    color: #fdfdfd !important;
+}
+
+.grey{
+    color: #d3d3d3 !important;
+}
+
+.mokka{
+    color: #d7a56a !important;
+}
+
+.olive{
+    color: #9c8e61 !important;
+}
+
+.sun{
+    color: #f29722 !important;
+}
+
+
+/*
+Global styles - spacing
+*/
+
+
+/*
+Footer - Componant
+*/
+
+
+footer .contact{
+    text-align: center;
+    padding: 2.5rem 0;
+    background: #fdfdfd;
+    font-weight: 500;
+    letter-spacing: 0.14rem;
+}
+
+footer .links{
+    display: grid;
+    background: #212121;
+    padding: 2.5rem 0;
+    color: #fdfdfd;
+    font-size: 	0.8125rem;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+
+}
+
+footer .links a {
+    margin-bottom: 1rem;
+    text-align: center;
+}
