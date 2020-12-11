@@ -7,19 +7,19 @@ namespace Interdisc.Farm.Models
     {
         public int CustomerModelId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage="The Name is Required")]
         [StringLength(100)]
         public string FirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Name is Required")]
         [StringLength(100)]
         public string LastName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Phone is Required")]
         [Phone]
         public string Phone { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "This email is Required")]
         [EmailAddress]
         public string Email { get; set; }
 

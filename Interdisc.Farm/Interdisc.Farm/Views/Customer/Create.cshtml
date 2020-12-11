@@ -7,40 +7,48 @@
 
 
 <div class="checkoutContainer">
-    <form id="checkoutForm" asp-action="Create">
+    <form id="checkoutForm" asp-action="Index">
         <div class="flex billingCart">
             <div class="billingAddress">
                 <h3>Billing Address</h3>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                <label asp-for="FirstName"><i class="feather-user"></i> Full Name</label>
-                <input asp-for="FirstName" type="text" class="checkoutBox form-control" name="fullname" placeholder="John M. Doe" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"><i class="feather-user"></i> First Name</label>
+                    <input asp-for="FirstName" type="text" class="checkoutBox form-control" name="fullname" placeholder="John M. Doe" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
 
-                <label asp-for="Email"><i class="feather-mail"></i> Email</label>
-                <input asp-for="Email" type="text" class="checkoutBox form-control" name="email" placeholder="john@zerowaste.com" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <div class="form-group">
+                        <label asp-for="Email" class="control-label"><i class="feather-mail"></i> Email</label>
+                        <input asp-for="Email" type="text" class="checkoutBox form-control" name="email" placeholder="john@zerowaste.com" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+               </div>
 
-                <label asp-for="Phone"><i class="feather-phone"></i> Email</label>
-                <input asp-for="Phone" type="text" class="checkoutBox form-control" name="phone" placeholder="12345678" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
+                <div class="form-group">
+                            <label asp-for="Phone" class="control-label"><i class="feather-phone"></i> Phone</label>
+                            <input asp-for="Phone" type="text" class="checkoutBox form-control" name="phone" placeholder="12345678" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
 
-                             
-                <label for="pickUpPlaces"><i class="feather-map"></i> Pick Up Place</label>
-                <select name="pickUp" id="pickUp" class="checkoutBox">
-                    <option value="atTheFarm">At the Farm</option>
-                    <option value="Dokk1">Dokk1</option>
-                </select>
-            </div>
-            <div class="cartContainer">
-                <h4>Shoppingcart:<span class="price" style="color:black"><i class="feather-shopping-cart"></i></span></h4>
-                <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-                <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-                <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-                <p><a href="#">Product 4</a> <span class="price">$2</span></p>
-                <hr>
-                <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
-            </div>
-        </div>
+                 <div class="form-group">
+                            <label for="pickUpPlaces"><i class="feather-map"></i> Pick Up Place</label>
+                            <select name="pickUp" id="pickUp" class="checkoutBox">
+                                <option value="atTheFarm">At the Farm</option>
+                                <option value="Dokk1">Dokk1</option>
+                            </select>
+                 </div>
+                        <div class="cartContainer">
+                            <h4>Shoppingcart:<span class="price" style="color:black"><i class="feather-shopping-cart"></i></span></h4>
+                            <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+                            <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+                            <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+                            <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+                            <hr>
+                            <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+                        </div>
+                </div>
+      </div>
         <div class="payment">
             <h3>Payment</h3>
            
@@ -54,8 +62,8 @@
             <input type="text" id="expyear" class="checkoutBox" name="expyear" placeholder="2018">
             <label for="cvv">CVV</label>
             <input type="text" id="cvv" class="checkoutBox" name="cvv" placeholder="352">
-            <input type="submit" value="Checkout" class="btn btn_primary" asp-action="Index" asp-controller="Invoice">
-            
+            <input type="submit" value="LogIn" class="btn btn_primary" asp-action="Index" asp-controller="Invoice">
+          
         </div>
     </form>
 </div>
