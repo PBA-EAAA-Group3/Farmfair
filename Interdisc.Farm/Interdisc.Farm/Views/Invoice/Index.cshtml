@@ -4,38 +4,58 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CustomerModel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OrderDate)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerModel.CustomerModelId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderDate)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.InvoiceModelId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.InvoiceModelId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.InvoiceModelId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<section id="invoice">
+    <div id="invoiceInner" class="container grid">
+        <div class="logo"><img src="images/farmfair-logo.svg" alt=""></div><!--clogo-->
+
+        <div class="invoiceData">
+            <p class="number label">inovoice #: <span>23</span></p>
+            <p class="created label">Date: <span>December 7 2020</span></p>
+            
+        </div><!--invoieData-->
+
+        <div class="farmInfo">
+            <p class="farmName label">Mossy Bottom Farm</p>
+            <p class="farmAdresse label">Hinnerupvej 133</p>
+            <p class="farmPostal label">8200 Aarhus N</p>
+        </div><!--farmInfo-->
+
+        <div class="customerInfo">
+            <p class="customerName">Jaques Bonnier</p>
+            <p class="customerEmail">email@email.com</p>
+        </div><!--customerInfo-->
+
+        <div class="gatheredItems table invocie-full">
+            <p>Item</p>
+            <p>Price</p>
+        </div><!--gatheredItems-->
+
+        <div class="itemTobuy table invocie-full">
+            <p>Apples <span>5</span></p>
+            <p>15,-</p>
+        </div><!--what I bought Info-->
+
+        <div class="itemTobuy table invocie-full">
+            <p>Strawberry <span>2</span></p>
+            <p>15,-</p>
+        </div><!--what I bought Info-->
+
+        <div class="itemTobuy table invocie-full">
+            <p>Corn <span>4</span></p>
+            <p>15,-</p>
+        </div><!--what I bought Info-->
+
+        <div class="itemTobuy table invocie-full">
+            <p>Porkloin <span>1</span></p>
+            <p>15,-</p>
+        </div><!--what I bought Info-->
+
+        <div class="invoiceTotal table invocie-full">
+            <p>Total price: <span>123 dkk</span></p>
+        </div>
+
+
+    </div><!--invoiceInner-->
+
+</section>

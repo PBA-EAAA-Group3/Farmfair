@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{BF359E9A-9D15-4E1D-A327-7CAA32D34956}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Interdisc.Farm/Controllers/BasketController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Interdisc.Farm/Views/Invoice/Index.cshtml">
     <Files>
-      <File FileName="Interdisc.Farm/Views/Basket/Index.cshtml" Line="11" Column="70" />
-      <File FileName="Interdisc.Farm/Controllers/BasketController.cs" Line="25" Column="42" />
+      <File FileName="Interdisc.Farm/Views/Customer/Create.cshtml" Line="57" Column="40" />
+      <File FileName="Interdisc.Farm/Models/CustomerModel.cs" Line="1" Column="1" />
+      <File FileName="Interdisc.Farm/Views/Invoice/Index.cshtml" Line="15" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,15 +13,16 @@
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="BasketController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Basket" expanded="True" />
                 <Node name="Customer" expanded="True" />
                 <Node name="Home" expanded="True" />
-                <Node name="Invoice" expanded="True" />
+                <Node name="Invoice" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+                <Node name="OrderItems" expanded="True" />
                 <Node name="Product" expanded="True" />
                 <Node name="ProductGroup" expanded="True" />
                 <Node name="Shared" expanded="True" />

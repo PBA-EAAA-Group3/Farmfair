@@ -13,24 +13,22 @@
 
 
 
-    <h2>Products</h2>
+<div id="hero" class="storeHero">
+    <div class="pageHeading">
+        <h1 class="big">Products</h1>
+    </div>
+</div>
     <section id="store">
-        <aside>
+        <aside id="filterProducts">
             <ul>
-                <li> <a class="btn btn_primary" asp-action="Index">All Products</a></li>
+                <li><a class="btn btn_primary" asp-action="Index">All</a></li>
                 @foreach (var item in Model.Item1)
                 {
                     @*@Html.DisplayFor(modelItem => item.ProductName)*@
                     @*@Html.DisplayFor(modelItem => item.ProductGroupModelId)*@
-                    <li>    <a class="btn btn_primary" asp-action="Category" asp-route-id="@item.ProductGroupModelId">@item.ProductGroupName</a> </li>
+                    <li><a class="btn btn_primary" asp-action="Category" asp-route-id="@item.ProductGroupModelId">@item.ProductGroupName</a> </li>
                 }
 
-                @*<li><a href="#" class="btn btn_primary">Fruit</a></li>
-        <li><a href="#" class="btn btn_primary">Veggies</a></li>
-        <li><a href="#" class="btn btn_primary">Meat</a></li>
-        <li><a href="#" class="btn btn_primary">Dairy</a></li>
-        <li><a href="#" class="btn btn_primary">Eggs</a></li>
-        <li><a href="#" class="btn btn_primary">Honey</a></li>*@
             </ul>
         </aside>
         <div id="store-grid">
@@ -41,11 +39,11 @@
                     <div class="storeCat">
                         <p class="label">Category</p>
                     </div>
-                    @Html.DisplayFor(modelItem => item.ProductName)
+                    
                     <img src="@GetProductImageUrl(item)" />
                   
                     <form class="addToBasket" action="/Product/AddProductToBasket" method="post">
-                        @*<h3 class="small">Apples</h3>*@
+                        <h3 class="small">@Html.DisplayFor(modelItem => item.ProductName)</h3>
                         <input type="hidden" name="id" value="@item.ProductModelId"/>
                         <input type="number" class="quantity" name="quantity" min="0" max="100" step="1" value="0" asp-action="Quantity" asp-route-id="@item.ProductModelId">
                         <button class="addButton label" type="submit">Add</button>
@@ -59,14 +57,22 @@
 
         </div>
     </section>
-    <footer>
-        <div class="contact">
-            <a href="mailto:zerowaist@farmfair.com">zerowaste@farmfair.com</a>
-        </div>
-        <div class="links">
-            <a href="#">Terms of Conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Cookie Policy</a>
-        </div>
-    </footer>
+    <section id="cta" class="cta1">
+        <div class="container">
+            <div class="leftArea text">
+                <h2 class="sun">It's about more <br> than food waste</h2>
+                <h3>Easy support of your local farming community, whilst not compromising on quality.</h3>
+            </div>
+            <div class="rightArea">
+                <div class="signUpBox olive">
 
+                    <h3>Recieve offers of <br>fresh produce near you</h3>
+                    <form action="/">
+                        <input type="text" name="full-name" placeholder="Name">
+                        <input type="email" name="email" placeholder="Email">
+                        <h3><a href="#"><input type="submit" value="Sign up now" id="" class="btn_cta"> <i class="feather-chevron-right"></i></a></h3>
+                    </form>
+                </div>
+            </div>
+    </section>
+    

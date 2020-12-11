@@ -1,170 +1,10 @@
-/*
-Importing styles
-*/
-
-@import 'footer.css';
-@import 'main.css';
-@import 'checkout.css';
-@import 'normalize.css';
-@import 'responsive.css';
-@import 'feather.css';
-
-
-/*
-Global styles - spacing
-*/
-.container{
-    margin: 0 auto;
-    padding: 0 2rem;
-    max-width: 1680px;
+body {
+  background: #d7a56a url(../images/noisy_color.png) repeat 0 0;
+  font-size: 16px;
+  line-height: 1.4;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
-
-.container-small {
-  padding: 0 1.5rem;
-}
-
-
-.grid {
-  display: grid;
-}
-
-
-.flex{
-    display: flex;
-    justify-content: space-between;
-}
-
-.space-bottom {
-  padding-bottom: 6.25rem;
-}
-
-section {
-  padding-bottom: 15vh;
-}
-
-/*
-Global styles - Typography
-*/
-
-h1, h2, h3{
-    font-family: 'Londrina Solid', cursive;
-    margin: 0;
-    font-weight: 400;
-}
-
-h1{
-    font-size: 5.75rem;
-}
-
-h1.big {
-  font-size: 12rem;
-}
-
-h2{
-    font-size: 3.75rem;
-    margin-bottom: 2.5rem;
-    text-align: center;
-}
-
-h3{
-    font-size: 2rem;
-    max-width: 500px;
-}
-
-h3.small{
-    font-size: 1.02rem;
-    letter-spacing: 0.5px;
-}
-
-h4{
-    font-size: 1.25rem;
-}
-
-p{
-    font-size: 1.125rem;
-    line-height: 1.7;
-    font-weight: 500;
-    max-width: 800px;
-}
-
-.label{
-    font-size: .8rem !important;
-}
-
-a{
-    text-decoration: none;
-    color: #f29722;
-    transition: all 0.5s linear;
-}
-
-
-
-/*
-Global styles - Buttons
-*/
-
-.btn {
-  padding: 32px 48px;
-  line-height: 0;
-  text-transform: uppercase;
-  letter-spacing: .144em;
-  border: none;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.btn_primary {
-  background: #f29722;
-  color: #212121;
-}
-
-.btn_primary:hover {
-  background: #9c8e61;
-  color: #fdfdfd;
-}
-
-.dark{
-    color: #212121 !important;
-}
-
-.downArrow{
-    color: #212121;
-    display: block;
-    text-align: center;
-    font-size: 2.8rem;
-    margin-top: 30px;
-}
-
-/*
-Global styles - Colors
-*/
-
-.white{
-    color: #fdfdfd !important;
-}
-
-.grey{
-    color: #d3d3d3 !important;
-}
-
-.mokka{
-    color: #d7a56a !important;
-}
-
-.olive{
-    color: #9c8e61 !important;
-}
-
-.sun{
-    color: #f29722 !important;
-}
-
-
-/*
-Global styles - spacing
-*/
 
 
 /*
@@ -229,7 +69,7 @@ margin-right: -10px;
 #hero{
   position: relative;
     background:  #9c8e61;
-    height: 90vh;
+    height: 60vh;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -277,7 +117,7 @@ margin-right: -10px;
 }
 
 #hero .logo{
-    width: 40vw;
+    width: 60vw;
     height: auto;
     max-width: 1120px;
 }
@@ -299,11 +139,13 @@ margin-right: -10px;
 Category - Homepage
 */
 #categories{
-    display: grid;
-    justify-content: center;
+    padding: 0 2rem;
     margin-top: -20vh;
     position: relative;
     z-index: 1500;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .grid-category{
@@ -598,7 +440,7 @@ call to action
 section#cta {
   background-position: center bottom;
   background-size: cover;
-  padding: 25vh 0;
+  padding: 15vh 0;
 }
 
 .cta1 {
@@ -662,9 +504,8 @@ Basket page
   grid-template-rows: 50px;
   background: #fdfdfd;
   border-radius: 20px;
-  padding: 10.75vh 3rem;
-  margin-left: 5vw;
-  margin-right: 5vw;
+  padding: 12.75vh 3rem;
+  margin: 4vh 4vw;
 }
 
 .basketGrid .basketItem {
@@ -672,7 +513,7 @@ border-bottom: 1px solid #ededed;
 }
 
 .basketItemForm .quantity {
-    width: 72px;
+    width: 50px;
     padding: 3px;
     margin: 0 12px 20px 0;
     border: 1px solid #d7a56a;
@@ -703,5 +544,10 @@ border-bottom: 1px solid #ededed;
   margin-top: 5vh;
   grid-column-start: 1;
   grid-column-end: 5;
-  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.basketButtons .btn {
+  border: 1px solid;
+  margin-bottom: 2rem;
 }

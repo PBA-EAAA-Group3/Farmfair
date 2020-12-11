@@ -16,7 +16,7 @@
     </div>
     <div class="pageHeading">
         <h1><img class="logo" src="~/images/farmfair-logo1.svg" alt="farmfair"></h1>
-        <h3 class="description">Get fresh excess produce and meats directly from the farm</h3>
+        <h3 class="mCenter description">Get fresh excess produce and meats directly from the farm</h3>
     </div>
 
 </div>
@@ -30,9 +30,9 @@
             <div class="card">
                 <a asp-action="Category" asp-controller="Product" asp-route-id="@group.ProductGroupModelId">
                     <img class="cat-overlay" src="@GetGroupImageUrl(group)"/>
-                    <p class="cat-overlay">
+                    <h3 class="cat-overlay">
                         @group.ProductGroupName
-                    </p>
+                    </h3>
                 </a>
             </div>
             }
@@ -143,16 +143,24 @@
 
     </div>
 </section>
-<section id="map"></section>
-<footer>
-    <div class="contact">
-        <a href="mailto:zerowaist@farmfair.com">zerowaste@farmfair.com</a>
-    </div>
-    <div class="links">
-        <a href="#">Terms of Conditions</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Cookie Policy</a>
-    </div>
-</footer>
+<section id="cta" class="cta1">
+    <div class="container">
+        <div class="leftArea text">
+            <h2 class="sun">It's about more <br> than food waste</h2>
+            <h3>Easy support of your local farming community, whilst not compromising on quality.</h3>
+        </div>
+        <div class="rightArea">
+            <div class="signUpBox olive">
+
+                <h3>Recieve offers of <br>fresh produce near you</h3>
+                <form action="/">
+                    <input type="text" name="full-name" placeholder="Name">
+                    <input type="email" name="email" placeholder="Email">
+                    <h3><a href="#"><input type="submit" value="Sign up now" id="" class="btn_cta"> <i class="feather-chevron-right"></i></a></h3>
+                </form>
+            </div>
+        </div>
+</section>
+
 
 <script src="~/js/main.js"></script>
